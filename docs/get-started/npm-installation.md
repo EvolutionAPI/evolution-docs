@@ -7,7 +7,7 @@ descriotion: Install Evolution API directly on your server with NPM.
 
 ## ENVIRONMENT PREPARATION FOR NPM
 
-#### Download and install Node.js
+### Download and install Node.js
 
 ```sh
 curl -sL https://deb.nodesource.com/setup_16.x | sudo -E bash -
@@ -15,13 +15,13 @@ curl -sL https://deb.nodesource.com/setup_16.x | sudo -E bash -
 apt-get install -y nodejs
 ```
 
-#### Update NPM to the latest version
+### Update NPM to the latest version
 
 ```sh
 npm install -g npm@latest
 ```
 
-#### Install the other necessary/recommended apps for installing and running the Evolution API
+### Install the other necessary/recommended apps for installing and running the Evolution API
 
 ```sh
 npm install -g pm2@latest
@@ -29,7 +29,7 @@ npm install -g pm2@latest
 apt-get install -y git zip unzip nload snapd curl wget sudo
 ```
 
-#### Update the Time Zone according to your installation location
+### Update the Time Zone according to your installation location
 
 ```sh
 dpkg-reconfigure tzdata
@@ -39,7 +39,7 @@ Choose the corresponding TimeZone
 
 TIMEZONE
 
-#### Update the system and install the necessary packages.
+### Update the system and install the necessary packages.
 
 ```sh
 apt update && apt -y upgrade
@@ -49,7 +49,7 @@ apt update && apt -y upgrade
 If a window appears with information about apps to restart, check all of them and confirm.
 :::
 
-#### Reboot the system
+### Reboot the system
 
 ```sh
 reboot
@@ -61,20 +61,20 @@ After receiving the message that it is now available, press CTRL + SHIFT + P to 
 
 ## INSTALLING THE EVOLUTION API
 
-#### Clone the Evoluton API repository
+### Clone the Evoluton API repository
 
 ```sh
 git clone https://github.com/EvolutionAPI/evolution-api.git
 ```
 
-#### Access the API folder and install
+### Access the API folder and install
 
 ```sh
 cd evolution-api
 npm install
 ```
 
-#### Copy and edit the API configuration file
+### Copy and edit the API configuration file
 
 ```sh
 cp src/dev-env.yml src/env.yml
@@ -251,7 +251,7 @@ The Evolution API defaults to display all.
 
 ## INITIALIZING THE EVOLUTION API
 
-#### Start the API
+### Start the API
 
 ```sh
 npm run start:prod
@@ -268,7 +268,7 @@ The others of the VERBOSE type are only informative
 
 Press CTRL + C to end the API
 
-#### Configure API initialization
+### Configure API initialization
 
 ```sh
 pm2 start 'npm run start:prod' --name ApiEvolution
@@ -286,7 +286,7 @@ pm2 start 'npm run start:prod' --name ApiEvolution -- start --node-args="--max-o
 In the example above, the VPS is assumed to have at least 4GB of RAM available only for the Evolution API
 :::
 
-#### Test if the Evolution API is working through the address IP:PORT:
+### Test if the Evolution API is working through the address IP:PORT:
 
 http://{{VPS-IP}}:8080/
 

@@ -7,19 +7,19 @@ description: Guide for install EvolutionAPI on Docker environment
 
 ## ENVIRONMENT PREPARATION FOR DOCKER
 
-#### Download and install Docker
+### Download and install Docker
 
 ```bash
 curl -fsSL https://get.docker.com | bash
 ```
 
-#### Install the other necessary/recommended apps for installing and running the Evolution API
+### Install the other necessary/recommended apps for installing and running the Evolution API
 
 ```bash
 apt-get install -y git zip unzip nload snapd curl wget sudo
 ```
 
-#### Update the Time Zone according to your installation location
+### Update the Time Zone according to your installation location
 
 ```bash
 dpkg-reconfigure tzdata
@@ -29,7 +29,7 @@ Choose the corresponding TimeZone
 
 TIMEZONE
 
-#### Update the system and install the necessary packages.
+### Update the system and install the necessary packages.
 
 ```bash
 apt update && apt -y upgrade
@@ -39,7 +39,7 @@ apt update && apt -y upgrade
 If a window appears with information about apps to restart, check all of them and confirm.
 :::
 
-#### Reboot the system
+### Reboot the system
 
 reboot
 Important:
@@ -48,15 +48,15 @@ After receiving the message that it is now available, press CTRL + SHIFT + P to 
 
 ## INSTALLING THE EVOLUTION API
 
-#### Clone the Evoluton API repository
+### Clone the Evoluton API repository
 
 git clone https://github.com/EvolutionAPI/evolution-api.git
 
-#### Access the API folder
+### Access the API folder
 
 cd evolution-api
 
-#### Copy and edit the API configuration file
+### Copy and edit the API configuration file
 
 cp Docker/.env.example Docker/.env
 nano Docker/.env
@@ -220,7 +220,7 @@ The Evolution API defaults to display all.
 
 :::
 
-#### Copy and edit the API's Docker configuration file
+### Copy and edit the API's Docker configuration file
 
 ```bash
 cp docker-compose.yaml.example docker-compose.yaml
@@ -258,7 +258,7 @@ networks:
     external: true
 ```
 
-#### Grant execute permissions to docker.sh
+### Grant execute permissions to docker.sh
 
 ```bash
 chmod +x docker.sh
@@ -266,7 +266,7 @@ chmod +x docker.sh
 
 ## INITIALIZING THE EVOLUTION API
 
-#### Run docker.sh to install the Evolution API
+### Run docker.sh to install the Evolution API
 
 ```bash
 ./docker.sh
@@ -283,7 +283,7 @@ Check if the message below appears on the last line:
 
 :::
 
-#### Run the command below to check the Evolution API logs
+### Run the command below to check the Evolution API logs
 
 ```bash
 docker container logs -f evolution_api
@@ -301,7 +301,7 @@ The others of the VERBOSE type are only informative.
 
 Press `CTRL + C` to close the Container's LOGS
 
-#### Test if the Evolution API is working through the address IP:PORT:
+### Test if the Evolution API is working through the address IP:PORT:
 
 `http://VPS-IP:8080/`
 
@@ -319,7 +319,7 @@ Press `CTRL + C` to close the Container's LOGS
 
 ## UPDATING THE EVOLUTION API
 
-#### Commands for updating the API
+### Commands for updating the API
 
 :::danger Warning:
 

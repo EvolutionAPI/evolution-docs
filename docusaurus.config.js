@@ -99,7 +99,7 @@ const config = {
       },
       tableOfContents: {
         minHeadingLevel: 2,
-        maxHeadingLevel: 3,
+        maxHeadingLevel: 2,
       },
       footer: {
         style: "dark",
