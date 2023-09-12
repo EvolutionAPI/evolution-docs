@@ -223,7 +223,13 @@ ls -l /etc/letsencrypt/live/DOMINIO-DA-API/
 
 :::info If it works, the following message will appear in your browser:
 
-_{"status":200,"message":"Welcome to the Evolution API, it is working!","version":"{{version}}"}_
+```json
+{
+  "status": 200,
+  "message": "Welcome to the Evolution API, it is working!",
+  "version": "{{version}}"
+}
+```
 
 :::
 
@@ -231,3 +237,7 @@ _{"status":200,"message":"Welcome to the Evolution API, it is working!","version
 
 _Confirm that the padlock appears closed on the left side of the browser address bar._
 :::
+
+```
+
+```
