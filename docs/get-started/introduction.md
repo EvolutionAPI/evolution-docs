@@ -17,7 +17,7 @@ If you have any questions, you can ask them on our Discord Channel, which was cr
 
 ## IMPORTANT RECOMENTATIONS
 
-#### Please, CAREFULLY READ ALL THE RECOMMENDATIONS BELOW BEFORE BEGINNING THE INSTALLATION:
+### Please, CAREFULLY READ ALL THE RECOMMENDATIONS BELOW BEFORE BEGINNING THE INSTALLATION:
 
 1. This script was created using as a base the DEBIAN distribution, version 11 LTS 64bits.
 2. Tests were not carried out on other distributions, versions or VPS's other than Hetzner.
@@ -29,7 +29,7 @@ If you have any questions, you can ask them on our Discord Channel, which was cr
 
 ## LICENSE
 
-#### This application is protected by the GNU V3 Use License.
+### This application is protected by the GNU V3 Use License.
 
 The GNU User License V3 guarantees that this application is distributed under the terms of the GNU General Public License Version 3. This means that you have the right to use, modify and distribute this application in accordance with the terms set out in the license.
 
