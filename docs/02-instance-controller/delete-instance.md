@@ -8,13 +8,13 @@ sidebar_position: 6
 | ------ | ---------------------------------------- |
 | DELETE | {{baseUrl}}/instance/delete/{{instance}} |
 
-Data to be sent in the Request
+### Data to be sent in the Request
 
 ```json title=Payload
 This request has no payload.
 ```
 
-Data returned from the Request
+### Data returned from the Request
 
 ```json title=Result
 {

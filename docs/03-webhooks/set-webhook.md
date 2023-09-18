@@ -16,7 +16,7 @@ After Instance Creation, you can still configure or change Webhook settings.
 
 Just enter the new data and consume the endpoint.
 
-#### Data to be sent in the Request:
+### Data to be sent in the Request:
 
 ```json title=Payload
 {
@@ -47,7 +47,7 @@ Just enter the new data and consume the endpoint.
 }
 ```
 
-#### Data returned from the Request
+### Data returned from the Request
 
 ```json title=Result
 {
