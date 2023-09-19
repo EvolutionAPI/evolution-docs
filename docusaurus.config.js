@@ -87,9 +87,29 @@ const config = {
             position: "right",
           },
           {
-            href: "https://github.com/EvolutionAPI/doc-evolution-api",
-            label: "GitHub",
+            href: "#",
+            label: "Community",
+            position: "left",
+            "aria-label": "Community menu with sub-items",
+            items: [
+              {
+                href: "https://evolution-api.com/whatsapp",
+                label: "WhatsApp Group",
+                "aria-label": "WhatsApp Group",
+              },
+              {
+                href: "https://evolution-api.com/discord",
+                label: "Discord Server",
+                "aria-label": "Discord Server",
+              },
+            ],
+          },
+          {
+            href: "https://github.com/EvolutionAPI/evolution-docs",
+            // label: "GitHub",
             position: "right",
+            className: "header-github-link",
+            "aria-label": "GitHub repository",
           },
         ],
       },
