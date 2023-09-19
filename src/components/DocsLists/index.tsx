@@ -57,11 +57,16 @@ export default function DocsLists() {
   }, []);
 
   return (
-    <div className="container padding--lg">
+    <div
+      className={clsx("container padding-horiz--lg", styles.docsListsWrapper)}
+    >
       <div className="row">
         {docsParsed.map((doc, i) => (
-          <div className="col col--4" key={i}>
-            <h3 className="padding-top--lg">
+          <div
+            className={clsx("col col--4 padding-vert--lg", styles.docsListCol)}
+            key={i}
+          >
+            <h3>
               {doc.category}{" "}
               <small className="badge badge--secondary">
                 {doc.docs.length}
