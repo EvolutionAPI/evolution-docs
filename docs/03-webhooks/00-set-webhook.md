@@ -1,7 +1,3 @@
----
-sidebar_position: 0
----
-
 # Set Webhook
 
 :::info Instructions:

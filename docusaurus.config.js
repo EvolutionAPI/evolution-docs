@@ -39,6 +39,7 @@ const config = {
       ({
         docs: {
           sidebarPath: require.resolve("./sidebars.js"),
+          numberPrefixParser: false, // This make DocsLists component render correct order
           // sidebarCollapsed: false,
         },
         blog: {
@@ -115,6 +116,7 @@ const config = {
       },
       docs: {
         sidebar: {
+          autoCollapseCategories: false,
           hideable: true,
         },
       },
@@ -131,35 +133,6 @@ const config = {
           width: 150,
           height: "auto",
         },
-        // links: [
-        //   {
-        //     title: "Community",
-        //     html: {},
-        //     items: [
-        //       {
-        //         label: "Discord",
-        //         href: "https://evolution-api.com/opensource-whatsapp-api/",
-        //       },
-        //       {
-        //         label: "WhatsApp Group",
-        //         href: "https://evolution-api.com/opensource-whatsapp-api/",
-        //       },
-        //     ],
-        //   },
-        //   {
-        //     title: "More",
-        //     items: [
-        //       {
-        //         label: "Blog",
-        //         to: "/blog",
-        //       },
-        //       {
-        //         label: "GitHub",
-        //         href: "https://github.com/EvolutionAPI/evolution-api",
-        //       },
-        //     ],
-        //   },
-        // ],
         copyright: `Copyright © ${new Date().getFullYear()} Evolution API. All rights reserved.`,
       },
       prism: {

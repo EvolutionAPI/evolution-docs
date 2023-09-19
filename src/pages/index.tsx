@@ -4,14 +4,11 @@ import Layout from "@theme/Layout";
 import clsx from "clsx";
 import React from "react";
 
-import { usePluginData } from "@docusaurus/useGlobalData";
 import styles from "./index.module.css";
+import DocsLists from "../components/DocsLists";
 
 function HomepageHeader() {
   const { siteConfig } = useDocusaurusContext();
-  const docsData = usePluginData("docusaurus-plugin-content-docs")[
-    "versions"
-  ][0]["docs"];
 
   return (
     <header className={clsx("hero hero--primary", styles.heroBanner)}>
@@ -39,7 +36,9 @@ export default function Home(): JSX.Element {
   return (
     <Layout title={`${siteConfig.title}`} description={`${siteConfig.tagline}`}>
       <HomepageHeader />
-      <main></main>
+      <main>
+        <DocsLists />
+      </main>
     </Layout>
   );
 }
