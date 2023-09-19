@@ -1,0 +1,15 @@
+.docsListsWrapper {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+}
+@media screen and (max-width: 996px) and (min-width: 601px) {
+  .docsListCol {
+    --ifm-col-width: calc(6 / 12 * 100%);
+  }
+}
+
+.docList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}

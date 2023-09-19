@@ -1,7 +1,3 @@
----
-sidebar_position: 0
----
-
 # Postman Variables
 
 :::success Check out all available Rest API endpoints from EvolutionAPI:
