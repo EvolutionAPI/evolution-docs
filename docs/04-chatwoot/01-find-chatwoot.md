@@ -2,7 +2,7 @@
 
 | Method | Endpoint                              |
 | ------ | ------------------------------------- |
-| GET    | {{baseUrl}}/webhook/find/{{instance}} |
+| GET    | {{baseUrl}}/chatwoot/find/{{instance}} |
 
 ### Data to be sent in the Request
 
