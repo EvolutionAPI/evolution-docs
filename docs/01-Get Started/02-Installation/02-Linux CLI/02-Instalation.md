@@ -1,8 +1,3 @@
----
-sidebar_position: 5
-description: Guide to install EvolutionAPI over Nginx reverse proxy.
----
-
 # Nginx Installation
 
 ## REVERSE PROXY CONFIGURATION
