@@ -10,7 +10,7 @@ descriotion: Install Evolution API directly on your server with NPM.
 ### Download and install Node.js
 
 ```sh
-curl -sL https://deb.nodesource.com/setup_16.x | sudo -E bash -
+curl -sL https://deb.nodesource.com/setup_20.x | sudo -E bash -
 
 apt-get install -y nodejs
 ```

@@ -23,7 +23,7 @@ The fastest way to deploy EvolutionAPI with Docker is using `docker run` in the 
 docker run --name evolution-api \
 -p 8080:8080 \
 -e API_KEY=YOUR_SUPER_SECURE_AUTHENTICATION_KEY \
-davidsongomes/evolution-api \
+atendai/evolution-api \
 node ./dist/src/main.js
 ```
 
@@ -54,7 +54,7 @@ docker run --name evolution-api \
 -e API_KEY=YOUR_SUPER_SECURE_AUTHENTICATION_KEY \
 -v evolution_store:/evolution/store \
 -v evolution_instances:/evolution/instances \
-davidsongomes/evolution-api \
+atendai/evolution-api \
 node ./dist/src/main.js
 ```
 
@@ -77,7 +77,7 @@ version: '3'
 
 services:
   evolution-api:
-    image: davidsongomes/evolution-api
+    image: atendai/evolution-api
     command: ["node", "./dist/src/main.js"]
     container_name: evolution_api
     restart: always
@@ -166,7 +166,7 @@ x-variables:
 
 services:
   evolution:
-    image: davidsongomes/evolution-api:v1.5.4
+    image: atendai/evolution-api:latest
     command: ["node", "./dist/src/main.js"]
     environment:
       <<: *variables
