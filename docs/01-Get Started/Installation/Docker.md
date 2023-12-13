@@ -1,6 +1,22 @@
 ---
+id: docker-installation
+title: Docker
+hide_title: false
+hide_table_of_contents: false
+sidebar_label: Docker
 sidebar_position: 1
-description: Guide for install EvolutionAPI on Docker environment
+pagination_label: Docker
+# custom_edit_url: https://github.com/facebook/docusaurus/edit/main/docs/api-doc-markdown.md
+description: Install EvolutionAPI on Docker environment
+keywords:
+  - installation
+  - Docker
+  - Nginx
+# image: https://i.imgur.com/mErPwqL.png
+# slug: /myDoc
+last_update:
+  date: 12/12/2023
+  author: matheus
 ---
 
 # Docker
@@ -13,13 +29,13 @@ EvolutionAPI is docker ready and can be easily deployed with docker in standalon
 
 ## Deploy using docker run
 
-:::info
+:::tip
 CLI installation is recommended in fast deploy mostly for tests or development, it should not be used for production, instead we recommend you to [use docker-compose](#deploy-using-docker-compose) for easy of deployment and maintainability.
 :::
 
 The fastest way to deploy EvolutionAPI with Docker is using `docker run` in the command line interface.
 
-```bash
+```bash title="Linux Command Line Interface" live
 docker run --name evolution-api \
 -p 8080:8080 \
 -e API_KEY=YOUR_SUPER_SECURE_AUTHENTICATION_KEY \
@@ -31,7 +47,7 @@ This will run a docker container exposing the application on port 8080 and you c
 
 If you want to make sure that the api is running just use your browser to access http://localhost:8080. This should be your browsers response:
 
-```json
+```json title="http://localhost:8080/" 
 {
     "status": 200,
     "message": "Welcome to the Evolution API, it is working!",
@@ -48,7 +64,7 @@ You could also deploy using docker volumes to map EvolutionAPI data and instance
 
 Run the following command to deploy the EvolutionAPI with the necessary volumes. This command maps the `evolution_store` and `evolution_instances` volumes to the respective directories within the container.
 
-```bash
+```bash title="Linux Command Line Interface" live
 docker run --name evolution-api \
 -p 8080:8080 \
 -e API_KEY=YOUR_SUPER_SECURE_AUTHENTICATION_KEY \
@@ -72,7 +88,7 @@ First, create a `docker-compose.yml` file in your project directory. This file w
 
 Here's an example `docker-compose.yml` for EvolutionAPI:
 
-```yaml
+```yaml title="docker-compose.yaml" showLineNumbers
 version: '3'
 
 services:
@@ -96,7 +112,7 @@ volumes:
 
 Navigate to the directory containing your docker-compose.yml file and run the following command to start the services defined in the file:
 
-```bash
+```bash title="Linux Command Line Interface"
 docker-compose up --detach
 ```
 
@@ -106,7 +122,7 @@ This command will download the necessary Docker images, create the defined servi
 
 After running the docker-compose up command, you should see the logs indicating that the services are up and running.
 
-```bash
+```bash title="Linux Command Line Interface"
 docker logs evolution_api
 ```
 
@@ -116,7 +132,7 @@ Using Docker Compose streamlines the deployment process, particularly for applic
 
 ## Docker Swarm
 
-:::note Swarm mode:
+:::note Swarm mode
 These installation instructions assume that you have already installed Docker and activated Swarm mode, you could find information on how to install docker in the [Official Docker Swarm Documentation](https://docs.docker.com/get-started/swarm-deploy/#deploy-to-swarm).
 :::
 
@@ -124,7 +140,7 @@ Docker swarm let you to be able to run multiple machine parallel one to the othe
 
 It is a little more advanced since it has to be able to deal with multiple machines, before proceed we really recommend reading [Docker Swarm documentation](https://docs.docker.com/get-started/swarm-deploy/#deploy-to-swarm).
 
-:::info Docker Network
+:::warning Docker Network
 Make sure that your cluster is configured with a manager node and the networks properly created before proceed with installation.
 :::
 
@@ -133,12 +149,12 @@ Make sure that your cluster is configured with a manager node and the networks p
 This is an example image with some of the environments variables set for fast configuration with Traefik proxy manager, read the [Traefik documentation](https://doc.traefik.io/traefik/providers/docker/) for more information.
 
 :::note optional resources
-Assuming that you wil have an MongoDB and a RabbitMQ container running container running. Read the [optional resources](/docs/01-Get%20Started/04-optional-resources.md) section for detailed information.
+Assuming that you wil have an MongoDB and a RabbitMQ container running container running. Read the [optional resources](/docs/01-Get%20Started/Optional%20Resources.md) section for detailed information.
 :::
 
-This example should work for most of use cases, if you want more in-depth over personalized configuration and installation check the [environment variables](/docs/01-Get%20Started/03-Environment%20Variables.md) section.
+This example should work for most of use cases, if you want more in-depth over personalized configuration and installation check the [environment variables](/docs/01-Get%20Started/Environment%20Variables.md) section.
 
-```yaml
+```yaml title="docker-compose.yaml" showLineNumbers
 version: "3.8"
 
 x-variables:
@@ -160,7 +176,7 @@ x-variables:
     RABBITMQ_ENABLED: "true"
     RABBITMQ_URI: amqp://guest:guest@rabbitmq:5672
     # Redis (As of version 1.6.0 still in beta for multi-session, but you can turn on in single session mode)
-    REDIS_ENABLED: "false" # Mude para true caso for usar redis
+    REDIS_ENABLED: "false" 
     REDIS_URI: redis://redis:6379
     REDIS_PREFIX_KEY: "evdocker"
 
