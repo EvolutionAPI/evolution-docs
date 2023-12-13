@@ -27,11 +27,23 @@ const config = {
   // Even if you don't use internalization, you can use this field to set useful
   // metadata like html lang. For example, if your site is Chinese, you may want
   // to replace "en" with "zh-Hans".
-  i18n: {
-    defaultLocale: "en",
-    locales: ["en"],
+  localeConfigs: {
+    en: {
+      label: 'English',
+      direction: 'ltr',
+      htmlLang: 'en-US',
+      calendar: 'gregory',
+      path: 'en',
+    },
+    pt: { // Changed this from 'fa' to 'pt'
+      label: 'Português', // Updated the label to Portuguese
+      direction: 'ltr', // Portuguese is a LTR language
+      htmlLang: 'pt-BR', // Assuming Brazilian Portuguese, change if necessary
+      calendar: 'gregory', // Portuguese uses the Gregorian calendar
+      path: 'pt',
+    },
   },
-
+  
   presets: [
     [
       "classic",
@@ -136,8 +148,8 @@ const config = {
         copyright: `Copyright © ${new Date().getFullYear()} Evolution API. All rights reserved.`,
       },
       prism: {
-        theme: lightCodeTheme,
-        darkTheme: darkCodeTheme,
+        theme: darkCodeTheme,
+        lightTheme: lightCodeTheme,
         additionalLanguages: ["nginx", "yaml"],
       },
     }),

@@ -1,11 +1,22 @@
 ---
+id: introduction
+title: Introduction
+hide_title: false
+hide_table_of_contents: false
+sidebar_label: Introduction
 sidebar_position: 1
-description: Understanding EvolutionAPI
+pagination_label: Introduction
+# custom_edit_url: https://github.com/facebook/docusaurus/edit/main/docs/api-doc-markdown.md
+description: Start exploring Evolution API
+keywords:
+  - Introduction
+# image: https://i.imgur.com/mErPwqL.png
+# slug: /myDoc
+last_update:
+  date: 12/12/2023
+  author: matheus
 ---
-
 # Introduction
-
-# Introduction to the Evolution API
 
 This is a **COMPLETELY FREE** project, aiming to support small shopkeepers, entrepreneurs, self-employed professionals, and people with limited purchasing power. The goal is to enhance local or digital businesses with a WhatsApp™ messaging solution via API.
 
