@@ -9,6 +9,10 @@ Evolution API can be enhanced with additional resources to improve reliability a
 
 ## MongoDB
 
+:::warning Data Migration Alert
+Switching from local storage to MongoDB will not automatically transfer your WhatsApp instances that are currently synchronized with the original local storage. As a result, all existing instances will lose their data and will require re-synchronization.
+:::
+
 MongoDB, a NoSQL database, is known for high performance and scalability. It's ideal for handling large data volumes in the Evolution API.
 
 Set the MongoDB environment variables in the `.env` for Docker or the `dev-env.yml` for NPM file as follows:
