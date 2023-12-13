@@ -27,7 +27,10 @@ const config = {
   // Even if you don't use internalization, you can use this field to set useful
   // metadata like html lang. For example, if your site is Chinese, you may want
   // to replace "en" with "zh-Hans".
-  localeConfigs: {
+  i18n: {
+    defaultLocale: 'en',
+    locales: ['en', 'pt'],
+    localeConfigs: {
     en: {
       label: 'English',
       direction: 'ltr',
@@ -42,8 +45,9 @@ const config = {
       calendar: 'gregory', // Portuguese uses the Gregorian calendar
       path: 'pt',
     },
-  },
-  
+  },  
+},
+
   presets: [
     [
       "classic",
