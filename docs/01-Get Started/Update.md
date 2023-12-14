@@ -34,7 +34,7 @@ If your Evolution API was initially installed using Docker Compose via the comma
 2. **Pull the Latest Image**: Update the Evolution API image to the latest version by running the following command:
 
 ```bash title="CLI"
-docker-compose pull atendeai/evolutionapi:latest
+docker-compose pull atendai/evolution-api:latest
 ```
 
 3. **Stop and Restart the Containers**: After pulling the latest image, stop the current containers and restart them. This can be done using the following command:
@@ -62,7 +62,7 @@ If you're using Portainer for container management, follow these steps to update
 
   evolution_api:
     # Update the Evolution API image version here
-    # Use 'atendeai/evolutionapi:latest' for the latest version
+    # Use 'atendai/evolution-api:latest' for the latest version
     # Or specify a specific version like 'atendeai/evolutionapi:v1.6.0'
     # highlight-next-line
     image: atendeai/evolutionapi:v1.x.x
@@ -72,7 +72,7 @@ If you're using Portainer for container management, follow these steps to update
 # ... (rest of the Docker Compose configuration)
 ```
 
-   - Update the value to `atendeai/evolutionapi:latest` for the latest version, or use `atendeai/evolutionapi:v1.x.x` for a specific version.
+   - Update the value to `atendai/evolution-api:latest` for the latest version, or use `atendeai/evolutionapi:v1.x.x` for a specific version.
    - After making the changes, click the 'Deploy' button at the end of the edit compose window.
 
 <!-- ![Portainer Interface](/public/images/02-portainer.png) -->
