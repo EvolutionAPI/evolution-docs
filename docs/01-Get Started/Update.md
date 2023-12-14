@@ -63,16 +63,15 @@ If you're using Portainer for container management, follow these steps to update
   evolution_api:
     # Update the Evolution API image version here
     # Use 'atendai/evolution-api:latest' for the latest version
-    # Or specify a specific version like 'atendeai/evolutionapi:v1.6.0'
+    # Or specify a specific version like 'atendai/evolutionapi:v1.6.0'
     # highlight-next-line
-    image: atendeai/evolutionapi:v1.x.x
+    image: atendai/evolution-api:v1.x.x
     networks:
       - your_network
 
 # ... (rest of the Docker Compose configuration)
 ```
-
-   - Update the value to `atendai/evolution-api:latest` for the latest version, or use `atendeai/evolutionapi:v1.x.x` for a specific version.
+   - Update the value to `atendai/evolution-api:latest` for the latest version, or use `atendai/evolutionapi:v1.x.x` for a specific version.
    - After making the changes, click the 'Deploy' button at the end of the edit compose window.
 
 <!-- ![Portainer Interface](/public/images/02-portainer.png) -->
@@ -80,7 +79,7 @@ If you're using Portainer for container management, follow these steps to update
 4. **Verify the Update**: After recreating the container, check to ensure Evolution API is running the latest version. This can typically be verified through the API's version endpoint or logs.
 
 :::note Production Environment Recommendation
-For production environments, it's advisable to specify a particular version of the Evolution API (e.g., `atendeai/evolutionapi:v1.x.x`) rather than using `latest`.
+For production environments, it's advisable to specify a particular version of the Evolution API (e.g., `atendai/evolution-api:v1.x.x`) rather than using `latest`.
 
 This practice ensures stability and predictability, as it protects your production environment from potential issues arising from unexpected changes in the latest version.
 :::
