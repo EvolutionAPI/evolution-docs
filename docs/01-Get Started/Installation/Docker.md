@@ -163,7 +163,7 @@ x-variables:
     DOMAIN: replace_with_your_domain.com
     # Server configs
     SERVER_TYPE: "https"
-    SERVER_URL: https://${SUBDOMAIN}.${DOMAIN:-localhost}.com.br
+    SERVER_URL: https://replace_with_your_domain.com
     CONFIG_SESSION_PHONE_CLIENT: "RENAME ME WITH YOUR COMPANY NAME"
     # ApiKey Config for authentication
     AUTHENTICATION_TYPE: apikey
@@ -175,10 +175,6 @@ x-variables:
     # RabbitMQ configs
     RABBITMQ_ENABLED: "true"
     RABBITMQ_URI: amqp://guest:guest@rabbitmq:5672
-    # Redis (As of version 1.6.0 still in beta for multi-session, but you can turn on in single session mode)
-    REDIS_ENABLED: "false" 
-    REDIS_URI: redis://redis:6379
-    REDIS_PREFIX_KEY: "evdocker"
 
 services:
   evolution:
@@ -199,13 +195,13 @@ services:
       replicas: 1
       labels:
         # Traefik labels for reverse proxy
-        traefik.enable: true
+        traefik.enable: "true"
         traefik.http.routers.evolution.service: "evolution"
         traefik.http.services.evolution.loadbalancer.server.port: 8080
-        traefik.http.routers.evolution.rule: "Host(`${SUBDOMAIN:-evo}.${DOMAIN:-localhost}`)"
+        traefik.http.routers.evolution.rule: "Host(`replace_with_your_domain.com`)"
         traefik.http.routers.evolution.tls.certresolver: "le" # Some users uses https as a router name
         traefik.http.routers.evolution.entrypoints: "websecure"
-        traefik.http.routers.evolution.tls: true
+        traefik.http.routers.evolution.tls: "true"
 
 volumes: 
   evolution_instances:
