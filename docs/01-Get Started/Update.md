@@ -17,9 +17,13 @@ last_update:
   author: matheus
 ---
 
-# How to Update Your Evolution API
-
 Keeping your Evolution API instance up-to-date is crucial for security, performance, and accessing new features. The update method depends on how you initially installed the API. This guide covers the steps for updating your Evolution API using Docker Compose and NPM.
+
+:::warning
+
+Before updating Evolution make sure that all the integrated apps are really working with Evolution, update at your own risk.
+
+:::
 
 ## Update with Docker
 
@@ -57,7 +61,7 @@ If you're using Portainer for container management, follow these steps to update
 3. **Update the Compose**:
    - Locate the `image` field in your Docker Compose configuration.
 
-```yaml title="https://portainer.yourdomain.com/#!/1/docker/stacks/evolution"
+```yaml title="https://portainer.yourdomain.com/#!/1/docker/stacks/evolution" showLineNumbers
 # ... (other services and configurations)
 
   evolution_api:
@@ -71,8 +75,9 @@ If you're using Portainer for container management, follow these steps to update
 
 # ... (rest of the Docker Compose configuration)
 ```
-   - Update the value to `atendai/evolution-api:latest` for the latest version, or use `atendai/evolutionapi:v1.x.x` for a specific version.
-   - After making the changes, click the 'Deploy' button at the end of the edit compose window.
+
+- Update the value to `atendai/evolution-api:latest` for the latest version, or use `atendai/evolutionapi:v1.x.x` for a specific version.
+- After making the changes, click the 'Deploy' button at the end of the edit compose window.
 
 <!-- ![Portainer Interface](/public/images/02-portainer.png) -->
 
