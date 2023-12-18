@@ -1,6 +1,6 @@
 ---
 id: optional-resources
-title: Optional Resources
+title: Optional resources
 hide_title: false
 hide_table_of_contents: false
 sidebar_label: Optional resources
@@ -83,6 +83,8 @@ In other words, for each WhatsApp instance where you want to use RabbitMQ, you n
 
 ### RabbitMQ setup for an individual instance
 
+For **developers** who wants to use in their applications AMQP messaging system, you could use RabbitMQ for queue your instances actions.
+
 To configure RabbitMQ for individual WhatsApp instances in the Evolution API, you can use the following endpoint:
 
 ```plaintext title="POST"
@@ -91,7 +93,7 @@ To configure RabbitMQ for individual WhatsApp instances in the Evolution API, yo
 
 This endpoint allows you to enable RabbitMQ and specify which events each WhatsApp instance should subscribe to in the AMQP queue. Below is an example of the JSON body for this endpoint:
 
-```json title="body"
+```json title="body" showLineNumbers
 {
     "enabled": true,
     "events": [
@@ -122,6 +124,8 @@ This endpoint allows you to enable RabbitMQ and specify which events each WhatsA
 ```
 
 When setting up RabbitMQ integration, adjust the events array in the JSON body to include only the events you want to subscribe to. Uncomment any event you wish to enable for RabbitMQ notifications.
+
+Now you can send to your application the messages and consume them in RabbitMQ.
 
 :::note
 

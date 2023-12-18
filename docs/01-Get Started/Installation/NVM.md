@@ -1,16 +1,17 @@
 ---
-id: npm-installation
-title: NPM
+id: nvm-installation
+title: NVM
 hide_title: false
 hide_table_of_contents: false
-sidebar_label: NPM
+sidebar_label: NVM
 sidebar_position: 2
-pagination_label: NPM
+pagination_label: NVM
 # custom_edit_url: https://github.com/facebook/docusaurus/edit/main/docs/api-doc-markdown.md
-description: How to install Evolution with NPM
+description: How to install Evolution with NVM
 keywords:
   - installation
   - NPM
+  - NVM
   - Nginx
 # image: https://i.imgur.com/mErPwqL.png
 # slug: /myDoc
@@ -19,22 +20,53 @@ last_update:
   author: matheus
 ---
 
-# NPM Installation
+Evolution API can be easily installed using the Node Version Manager (NVM). Follow these steps to set up your environment and get Evolution API up and running on your server.
 
-Evolution API can be easily installed using the Node Package Manager (NPM). Follow these steps to set up your environment and get Evolution API up and running on your server.
-
-## Download and install Node.js
+## Install NVM
 
 First, download and install Node.js. You can do this by running the following commands:
 
+import Tabs from '@theme/Tabs';
+
+import TabItem from '@theme/TabItem';
+
+<Tabs>
+  <TabItem value="curl" label="curl">
+
+  ```bash
+  curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
+  ```
+
+  </TabItem>
+
+  <TabItem value="wget" label="wget">
+
+  ```bash
+  wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
+  ```
+
+  </TabItem>
+</Tabs>
+
+Now just point the NVM directiories and install node:
+
 ```bash title="CLI"
-curl -sL https://deb.nodesource.com/setup_16.x | sudo -E bash -
-apt-get install -y nodejs
-npm install -g npm@latest
-npm install -g pm2@latest
+# Source the bash for environments
+source ~/.bashrc
+
+# Directories
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+
+# Install node:
+ nvm install v20.10.0 && nvm use v20.10.0
 ```
 
-These commands will install Node.js, NPM (Node Package Manager), and PM2 on your system.
+Confirm that NVM is successfully installed:
+
+```bash
+command -v nvm
+```
 
 :::note
 If you haven`t already you could also configure your private server timezone with the following command
@@ -42,6 +74,7 @@ If you haven`t already you could also configure your private server timezone wit
 ```bash
 dpkg-reconfigure tzdata
 ```
+
 :::
 
 Clone the oficial repository from Github to your private server.
@@ -74,9 +107,10 @@ nano src/env.yml
 
 In the nano editor, navigate through the file and replace the default values with your specific configurations. This may include database connection strings, API keys, server ports, etc.
 
+:::note
 
-:::note 
 Acess the [environment variables](/docs/01-Get%20Started/Environment%20Variables.md) section for detailed instructions on configuring your `env.yml` file.
+
 :::
 
 To start the Evolution API, use the following command:
@@ -85,7 +119,7 @@ To start the Evolution API, use the following command:
 npm run start:prod
 ```
 
-## Configure API Initialization with PM2
+## Configure PM2
 
 Use PM2 to manage the API process:
 
@@ -102,14 +136,14 @@ You may need to allocate more memory to PM2, especially if your server has the c
 pm2 start 'npm run start:prod' --name ApiEvolution -- start --node-args="--max-old-space-size=4096" --max-memory-restart 4G
 ```
 
-n the above example, it's assumed that your VPS has at least 4GB of RAM available exclusively for the Evolution API.
+In the above example, it's assumed that your VPS has at least 4GB of RAM available exclusively for the Evolution API.
 
 The available memory may vary we recommend at least 1GB to run Evolution.
 :::
 
 If you want to make sure that the api is running just use your browser to access http://localhost:8080. This should be your browsers response:
 
-```json title="http://localhost:8080/" 
+```json title="http://localhost:8080/" showLineNumbers
 {
     "status": 200,
     "message": "Welcome to the Evolution API, it is working!",
@@ -118,9 +152,15 @@ If you want to make sure that the api is running just use your browser to access
 }
 ```
 
+:::tip
+
+Make your life easier with some the JSON Formatter extension on [Google Chrome](https://chromewebstore.google.com/detail/json-formatter/gpmodmeblccallcadopbcoeoejepgpnb?hl=pt-BR) or [Microsoft Edge](https://microsoftedge.microsoft.com/addons/detail/json-formatter/hdebmbedhflilekbidmmdiaiilaegkjl) stores.
+
+:::
+
 EvolutionAPI has a in-built Swagger endpoint documentation, you could use to see all the possible endpoints and test the requests by accessing `http://localhost:8080/docs`.
 
-## Nginx Reverse Proxy configuration
+## Nginx configuration
 
 First let`s install, start, enable and test the Nginx service in your private server.
 
@@ -143,13 +183,13 @@ rm /etc/nginx/sites-enabled/default
 
 ### Create a new server block file in the directory
 
-```bash title="CLI"
+```bash title="CLI" 
 nano /etc/nginx/conf.d/default.conf
 ```
 
 Then paste the Nginx config in the `default.conf` file:
 
-```nginx title="/etc/nginx/conf.d/default.conf"
+```nginx title="/etc/nginx/conf.d/default.conf" showLineNumbers
 server {
   listen 80;
   listen \[::\]:80;
@@ -204,9 +244,10 @@ Now, create a Virtual Host pointing to your subdomain by editing the `api` file:
 cd ~
 nano /etc/nginx/sites-available/api
 ```
+
 Then paste the Nginx config in the `api` file:
 
-```nginx title="/etc/nginx/sites-available/api"
+```nginx title="/etc/nginx/sites-available/api" showLineNumbers
 server {
   server_name replace-this-with-your-cool-domain.com;
 
@@ -224,6 +265,7 @@ location / {
 }
 
 ```
+
 Create a symbolic link between the `api` and `sites-enabled` files:
 
 ```bash title="CLI"
@@ -265,8 +307,9 @@ certbot --nginx -d replace-this-with-your-cool-domain.com
 You will be asked if you want to enter an email to receive notifications when the certificate generated is close to the expiration date.
 
 :::info 
+
 If the certification is successful, at the end of the process a line will be displayed with the following message:
 
-_"Congratulations! You have successfully enabled HTTPS"_
+"Congratulations! You have successfully enabled HTTPS"
 
 :::

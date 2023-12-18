@@ -36,7 +36,7 @@ CLI installation is recommended in fast deploy mostly for tests or development, 
 The fastest way to deploy EvolutionAPI with Docker is using `docker run` in the command line interface.
 
 ```bash title="Linux Command Line Interface" live
-docker run --name evolution-api \
+docker run --name evolution-api --detach \
 -p 8080:8080 \
 -e API_KEY=YOUR_SUPER_SECURE_AUTHENTICATION_KEY \
 atendai/evolution-api \
@@ -65,7 +65,7 @@ You could also deploy using docker volumes to map EvolutionAPI data and instance
 Run the following command to deploy the EvolutionAPI with the necessary volumes. This command maps the `evolution_store` and `evolution_instances` volumes to the respective directories within the container.
 
 ```bash title="Linux Command Line Interface" live
-docker run --name evolution-api \
+docker run --name evolution-api --detach \
 -p 8080:8080 \
 -e API_KEY=YOUR_SUPER_SECURE_AUTHENTICATION_KEY \
 -v evolution_store:/evolution/store \
@@ -80,13 +80,15 @@ node ./dist/src/main.js
 
 ## Deploy using docker-compose
 
-Deploying the EvolutionAPI using Docker Compose simplifies the configuration and management of your Docker containers. It allows you to define your Docker environment in a `docker-compose.yml` file, and then use a single command to start everything.
+Deploying the EvolutionAPI using Docker Compose simplifies the configuration and management of your Docker containers. It allows you to define your Docker environment in a `docker-compose.yaml` file, and then use a single command to start everything.
 
-### Create a docker-compose file
+### Docker Standalone
 
-First, create a `docker-compose.yml` file in your project directory. This file will define the services, networks, and volumes for your Docker environment.
+Docker standalone is suited when your evolution API will be executed in only one machine and you will not need soon of scalability or other Docker Swarm resources, is the most convenient way of use Docker for most people.
 
-Here's an example `docker-compose.yml` for EvolutionAPI:
+First, create a `docker-compose.yaml` file in your project directory. This file will define the services, networks, and volumes for your Docker environment.
+
+Here's an example `docker-compose.yaml` for **Docker Standalone** mode:
 
 ```yaml title="docker-compose.yaml" showLineNumbers
 version: '3'
@@ -165,16 +167,19 @@ x-variables:
     SERVER_TYPE: "https"
     SERVER_URL: https://replace_with_your_domain.com
     CONFIG_SESSION_PHONE_CLIENT: "RENAME ME WITH YOUR COMPANY NAME"
-    # ApiKey Config for authentication
+    # ApiKey Config for authentication High Encryption AES 256 from https://acte.ltd/utils/randomkeygen
     AUTHENTICATION_TYPE: apikey
     AUTHENTICATION_API_KEY: YOUR_SUPER_SECURE_KEY
     # Database 
     DATABASE_ENABLED: "true" 
-    DATABASE_CONNECTION_URI: mongodb://root:root@mongodb:27017/?authSource=admin&readPreference=primary&ssl=false&directConnection=true
+    DATABASE_CONNECTION_URI: mongodb://yourmongouser:yourmongopassword@mongodb:27017/?authSource=admin&readPreference=primary&ssl=false&directConnection=true
     DATABASE_CONNECTION_DB_PREFIX_NAME: evdocker
     # RabbitMQ configs
     RABBITMQ_ENABLED: "true"
     RABBITMQ_URI: amqp://guest:guest@rabbitmq:5672
+    # Typebot
+    TYPEBOT_API_VERSION: "latest" # old | latest
+    TYPEBOT_KEEP_OPEN: "false"
 
 services:
   evolution:
@@ -183,7 +188,7 @@ services:
     environment:
       <<: *variables
     volumes:
-      - evolution_instances_instances:/evolution/instances
+      - evolution_instances:/evolution/instances
       - evolution_store:/evolution/store
     ports:
     - 8080:8080
@@ -216,3 +221,11 @@ networks:
     external: true
     driver: overlay
 ```
+
+Now just deploy the compose as a Swarm stack with the following command:
+
+```bash title="CLI"
+docker stack deploy -c docker-compose.yaml evolution
+```
+
+This will deploy in Swarm mode in ready to scale environment, suited for developers or people who needs more resources.
