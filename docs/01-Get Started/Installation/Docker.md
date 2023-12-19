@@ -161,8 +161,6 @@ version: "3.8"
 
 x-variables:
   &variables
-    SUBDOMAIN: evo # This will be the subdomain in which the application will run
-    DOMAIN: replace_with_your_domain.com
     # Server configs
     SERVER_TYPE: "https"
     SERVER_URL: https://replace_with_your_domain.com
@@ -210,7 +208,7 @@ services:
 
 volumes: 
   evolution_instances:
-  evolution_data:
+  evolution_store:
 
 networks:
   public:
