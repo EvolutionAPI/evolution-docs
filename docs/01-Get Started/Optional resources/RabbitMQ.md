@@ -11,6 +11,7 @@ description: Integrate RabbitMQ queues in your develop environment with Evolutio
 keywords:
   - Optional Resources
   - RabbitMQ
+  - Developers
 # image: https://i.imgur.com/mErPwqL.png
 # slug: /myDoc
 last_update:
@@ -41,30 +42,36 @@ This endpoint allows you to enable RabbitMQ and specify which events each WhatsA
     "enabled": true,
     "events": [
         // List of events to subscribe to. Uncomment the events you need.
-        // "APPLICATION_STARTUP",
+        "APPLICATION_STARTUP",
         "QRCODE_UPDATED",
-        // "MESSAGES_SET",
+        "MESSAGES_SET",
         "MESSAGES_UPSERT",
         "MESSAGES_UPDATE",
         "MESSAGES_DELETE",
         "SEND_MESSAGE",
-        // "CONTACTS_SET",
-        // "CONTACTS_UPSERT",
-        // "CONTACTS_UPDATE",
-        // "PRESENCE_UPDATE",
-        // "CHATS_SET",
-        // "CHATS_UPSERT",
-        // "CHATS_UPDATE",
-        // "CHATS_DELETE",
-        // "GROUPS_UPSERT",
-        // "GROUP_UPDATE",
-        // "GROUP_PARTICIPANTS_UPDATE",
+        "CONTACTS_SET",
+        "CONTACTS_UPSERT",
+        "CONTACTS_UPDATE",
+        "PRESENCE_UPDATE",
+        "CHATS_SET",
+        "CHATS_UPSERT",
+        "CHATS_UPDATE",
+        "CHATS_DELETE",
+        "GROUPS_UPSERT",
+        "GROUP_UPDATE",
+        "GROUP_PARTICIPANTS_UPDATE",
         "CONNECTION_UPDATE",
-        "CALL"
-        // "NEW_JWT_TOKEN"
+        "CALL",
+        "NEW_JWT_TOKEN"
     ]    
 }
 ```
+
+:::tip
+
+Remove unused events to keep low resource usage with RabbitMQ.
+
+:::
 
 When setting up RabbitMQ integration, adjust the events array in the JSON body to include only the events you want to subscribe to. Uncomment any event you wish to enable for RabbitMQ notifications.
 
