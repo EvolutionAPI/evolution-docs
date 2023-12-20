@@ -4,7 +4,7 @@ title: Updates
 hide_title: false
 hide_table_of_contents: false
 sidebar_label: Updates
-sidebar_position: 5
+sidebar_position: 8
 pagination_label: Updates
 # custom_edit_url: https://github.com/facebook/docusaurus/edit/main/docs/api-doc-markdown.md
 description: Update your Evolution API instances

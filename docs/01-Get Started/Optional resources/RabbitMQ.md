@@ -1,79 +1,22 @@
 ---
-id: optional-resources
-title: Optional resources
-hide_title: false
+id: rabbitmq
+title: RabbitMQ
+hide_title: true
 hide_table_of_contents: false
-sidebar_label: Optional resources
-sidebar_position: 3
-pagination_label: Optional resources
+sidebar_label: RabbitMQ
+sidebar_position: 2
+pagination_label: RabbitMQ
 # custom_edit_url: https://github.com/facebook/docusaurus/edit/main/docs/api-doc-markdown.md
-description: Guide for setup optional server resources.
+description: Integrate RabbitMQ queues in your develop environment with Evolution API.
 keywords:
   - Optional Resources
-  - Redis
   - RabbitMQ
-  - MongoDB
 # image: https://i.imgur.com/mErPwqL.png
 # slug: /myDoc
 last_update:
-  date: 12/12/2023
+  date: 12/19/2023
   author: matheus
 ---
-
-Evolution API can be enhanced with additional resources to improve reliability and speed. Below are configurations for MongoDB, Redis, and RabbitMQ.
-
-## MongoDB
-
-:::warning Data Migration Alert
-
-Switching from local storage to MongoDB will not automatically transfer your WhatsApp instances that are currently synchronized with the original local storage. As a result, all existing instances will lose their data and will require re-synchronization.
-
-:::
-
-MongoDB, a NoSQL database, is known for high performance and scalability. It's ideal for handling large data volumes in the Evolution API.
-
-Set the MongoDB environment variables in the `.env` for Docker or the `dev-env.yml` for NPM file as follows:
-
-```yaml title=".env or dev-env.yml" showLineNumbers
-# Set to true to enable MongoDB.
-DATABASE_ENABLED=true
-# Your MongoDB connection string.
-DATABASE_CONNECTION_URI=mongodb://user:password@database_URL/?authSource=admin&readPreference=primary&ssl=false&directConnection=true
-# Prefix for your database name.
-DATABASE_CONNECTION_DB_PREFIX_NAME=evo
-```
-
-## Redis
-
-:::warning Deprecation of Redis
-
-Redis will be deprecated in future versions of Evolution API, we do not recommend Redis installation anymore.
-
-:::
-
-Redis is an in-memory data structure store, used as a database, cache, and message broker. It supports data structures such as strings, hashes, lists, sets, and more. Incorporating Redis can significantly improve the performance of Evolution API by enabling faster data access and efficient caching.
-
-Set the Redis environment variables in the `.env` for Docker or the `dev-env.yml` for NPM file as follows:
-
-```yaml title=".env or dev-env.yml" showLineNumbers
-# Set to true to enable Redis.
-REDIS_ENABLED=false
-# Your Redis server URI.
-REDIS_URI=redis://redis:6379
-# Prefix key for Redis data.
-REDIS_PREFIX_KEY=evo
-```
-
-## RabbitMQ
-
-RabbitMQ is an open-source message broker software that facilitates efficient communication between different parts of a distributed application or between different applications altogether. RabbitMQ is used for secure and reliable message passing between different parts of an application.
-
-```yaml title=".env or dev-env.yml" showLineNumbers
-# Set to true to enable RabbitMQ.
-RABBITMQ_ENABLED=true
-# Connection URI for RabbitMQ.
-RABBITMQ_URI=amqp://guest:guest@rabbitmq:5672
-```
 
 ## Activating RabbitMQ
 

@@ -4,7 +4,7 @@ title: Release notes
 hide_title: false
 hide_table_of_contents: false
 sidebar_label: Release notes
-sidebar_position: 6
+sidebar_position: 7
 pagination_label: Releases
 # custom_edit_url: https://github.com/facebook/docusaurus/edit/main/docs/api-doc-markdown.md
 description: Latest releases of Evolution API

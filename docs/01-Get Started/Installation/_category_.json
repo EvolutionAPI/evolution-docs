@@ -3,12 +3,12 @@
   "label": "Installation",
   "collapsible": true,
   "collapsed": false,
-  "className": "red",
+  "className": "Installation",
   "link": {
     "type": "generated-index",
-    "title": "Linux CLI"
+    "title": "Installation"
   },
   "customProps": {
-    "description": "installation configs on NPM"
+    "description": "Self-host Evolution in your own environment."
   }
 }
