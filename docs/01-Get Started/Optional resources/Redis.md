@@ -4,7 +4,7 @@ title: Redis
 hide_title: true
 hide_table_of_contents: false
 sidebar_label: Redis
-sidebar_position: 3
+sidebar_position: 4
 pagination_label: Redis
 # custom_edit_url: https://github.com/facebook/docusaurus/edit/main/docs/api-doc-markdown.md
 description: Setup an Redis in your environment with Evolution API.
