@@ -59,6 +59,50 @@ Evolution uses semantic versioning. All version numbers are in the format MAJOR.
 - **Minor** version when adding functionality in a backward-compatible manner.
 - **Patch** version when making backward-compatible bug fixes.
 
+:::info
+
+This is the `latest` version, the most stable as of right now. We recommend uses of the `latest` version instead of `homolog` for stability reasons.
+
+:::
+
+## 1.6.1
+
+> This is a minor fix update. Version 1.6.1 introduces fixes for message handling, Typebot integration, media sharing, text formatting in Chatwoot, and instance management. It also adds customization options and resolves reconnection issues with MongoDB.
+
+<details>
+  <summary>See full changelog</summary>
+  <div>
+    <details>
+      <summary>Fixes</summary>
+      <div>
+        - Fixed Lid Messages <br />
+        - Fixed the pairing code <br />
+        - Adjusts in typebot <br />
+        - Fixed sending variables to typebot <br />
+        - Fixed sending variables from typebot <br />
+        - Options to disable docs and manager <br />
+        - Correction sending s3/minio media to chatwoot and typebot <br />
+        - Fixed chatwoot Bold, Italic and Underline formatting using Regex <br />
+        - Include instance Id field in the instance configuration <br />
+        - Fix the problem when disconnecting the instance and connecting again using mongodb <br />
+        - Fixed the problem with typebot closing at the end of the flow, now this is optional with the TYPEBOT_KEEP_OPEN variable <br />
+        - Added the sign_delimiter property to the Chatwoot configuration, allowing you to set a different delimiter for the signature. Default when not defined \n <br />
+      </div>
+    </details>
+    <details>
+      <summary>Supported integrations</summary>
+      <div>
+          - Chatwoot: v3.3.1 <br/>
+          - Typebot: v2.20.0 <br/>
+      </div>
+    </details>
+  </div>
+</details>
+
+View the [commits](https://github.com/EvolutionAPI/evolution-api/compare/1.5.4...1.6.0) for this version.
+
+Release date: 2023-12-15
+
 ## 1.6.0
 
 > New Instance manager available on endpoint `/manager` and support for reply messages in Chatwoot.
@@ -100,7 +144,7 @@ Evolution uses semantic versioning. All version numbers are in the format MAJOR.
       </div>
     </details>
     <details>
-      <summary>Suported Integrations</summary>
+      <summary>Supported integrations</summary>
       <div>
           - Chatwoot: v3.3.1 <br/>
           - Typebot: v2.20.0 <br/>
@@ -131,12 +175,6 @@ Evolution uses semantic versioning. All version numbers are in the format MAJOR.
 View the [commits](https://github.com/EvolutionAPI/evolution-api/compare/1.5.4...1.6.0) for this version.
 
 Release date: 2023-12-15
-
-:::info
-
-This is the `latest` version, the most stable as of right now. We recommend uses of the `latest` version instead of `homolog` for stability reasons.
-
-:::
 
 ## 1.5.4
 
