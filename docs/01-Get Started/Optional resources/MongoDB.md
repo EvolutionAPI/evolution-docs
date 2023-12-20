@@ -19,7 +19,7 @@ last_update:
   author: matheus
 ---
 
-## Setup an MongoDB database
+## Setup a MongoDB database
 
 MongoDB, a NoSQL database, is known for high performance and scalability. It's ideal for handling large data volumes in the Evolution API.
 
