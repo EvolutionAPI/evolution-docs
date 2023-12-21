@@ -79,6 +79,6 @@ Now you can send to your application the messages and consume them in RabbitMQ.
 
 :::note
 
-If you want more in-depth over personalized configuration and installation check the [environment variables](/docs/01-Get%20Started/Environment%20Variables.md) section.
+If you want more in-depth over personalized configuration and installation check the [environment variables](/docs/01-Get%20Started/Environment%20variables.md) section.
 
 :::
