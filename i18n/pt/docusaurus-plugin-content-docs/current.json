@@ -1,0 +1,50 @@
+{
+  "version.label": {
+    "message": "Next",
+    "description": "The label for version current"
+  },
+  "sidebar.docsSidebar.category.Get Started": {
+    "message": "Get Started",
+    "description": "The label for category Get Started in sidebar docsSidebar"
+  },
+  "sidebar.docsSidebar.category.Get Started.link.generated-index.title": {
+    "message": "Get Started",
+    "description": "The generated-index page title for category Get Started in sidebar docsSidebar"
+  },
+  "sidebar.docsSidebar.category.Installation": {
+    "message": "Installation",
+    "description": "The label for category Installation in sidebar docsSidebar"
+  },
+  "sidebar.docsSidebar.category.Installation.link.generated-index.title": {
+    "message": "Installation",
+    "description": "The generated-index page title for category Installation in sidebar docsSidebar"
+  },
+  "sidebar.docsSidebar.category.Optional resources": {
+    "message": "Optional resources",
+    "description": "The label for category Optional resources in sidebar docsSidebar"
+  },
+  "sidebar.docsSidebar.category.Optional resources.link.generated-index.title": {
+    "message": "Optional resources",
+    "description": "The generated-index page title for category Optional resources in sidebar docsSidebar"
+  },
+  "sidebar.docsSidebar.category.Configuration": {
+    "message": "Configuration",
+    "description": "The label for category Configuration in sidebar docsSidebar"
+  },
+  "sidebar.docsSidebar.category.Instance Controller": {
+    "message": "Instance Controller",
+    "description": "The label for category Instance Controller in sidebar docsSidebar"
+  },
+  "sidebar.docsSidebar.category.Webhooks": {
+    "message": "Webhooks",
+    "description": "The label for category Webhooks in sidebar docsSidebar"
+  },
+  "sidebar.docsSidebar.category.Send Messages": {
+    "message": "Send Messages",
+    "description": "The label for category Send Messages in sidebar docsSidebar"
+  },
+  "sidebar.docsSidebar.category.Chatwoot": {
+    "message": "Chatwoot",
+    "description": "The label for category Chatwoot in sidebar docsSidebar"
+  }
+}
