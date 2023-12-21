@@ -78,9 +78,17 @@ node ./dist/src/main.js
 
 `-v evolution_instances:/evolution/instances`: This mounts the evolution_instances volume to the /evolution/instances directory. This is crucial for maintaining the state of your WhatsApp instances.
 
+:::tip
+
+For production environments with high volumes of requests, see the example below with Docker Compose using MongoDB.
+
+:::
+
 ## Deploy using docker-compose
 
 Deploying the EvolutionAPI using Docker Compose simplifies the configuration and management of your Docker containers. It allows you to define your Docker environment in a `docker-compose.yaml` file, and then use a single command to start everything.
+
+This is an example of Docker Compose for standalone environments, that is, a single server running, for synchronization of two servers in parallel use Swarm mode, this is for more advanced docker users.
 
 ### Docker Standalone
 
@@ -151,10 +159,10 @@ Make sure that your cluster is configured with a manager node and the networks p
 This is an example image with some of the environments variables set for fast configuration with Traefik proxy manager, read the [Traefik documentation](https://doc.traefik.io/traefik/providers/docker/) for more information.
 
 :::note optional resources
-Assuming that you wil have an MongoDB and a RabbitMQ container running container running. Read the [optional resources](/docs/01-Get%20Started/Optional%20Resources.md) section for detailed information.
+Assuming that you wil have an MongoDB and a RabbitMQ container running container running. Read the [optional resources](/docs/01-Get%20Started/Optional%20resources/) section for detailed information.
 :::
 
-This example should work for most of use cases, if you want more in-depth over personalized configuration and installation check the [environment variables](/docs/01-Get%20Started/Environment%20Variables.md) section.
+This example should work for most of use cases, if you want more in-depth over personalized configuration and installation check the [environment variables](/docs/01-Get%20Started/Environment%20variables.md) section.
 
 ```yaml title="docker-compose.yaml" showLineNumbers
 version: "3.8"
