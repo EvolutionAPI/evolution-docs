@@ -83,7 +83,7 @@ Clone the oficial repository from Github to your private server.
 git clone https://github.com/EvolutionAPI/evolution-api.git
 ```
 
-Then access the folder that the project is on
+Then acess the folder that the project is on
 
 ```bash title="CLI"
 cd evolution-api
@@ -109,7 +109,7 @@ In the nano editor, navigate through the file and replace the default values wit
 
 :::note
 
-Access the [environment variables](/docs/01-Get%20Started/Environment%20variables.md) section for detailed instructions on configuring your `env.yml` file.
+Acess the [environment variables](/docs/01-Get%20Started/Environment%20variables.md) section for detailed instructions on configuring your `env.yml` file.
 
 :::
 
@@ -119,12 +119,11 @@ To start the Evolution API, use the following command:
 npm run start:prod
 ```
 
-## Install and Configure PM2
+## Configure PM2
 
-Use PM2 to install PM2 and start the manager for the API process:
+Use PM2 to manage the API process:
 
 ```bash title="CLI"
-npm install pm2 -g
 pm2 start 'npm run start:prod' --name ApiEvolution
 pm2 startup
 pm2 save --force

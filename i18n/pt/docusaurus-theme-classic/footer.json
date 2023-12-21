@@ -1,0 +1,10 @@
+{
+  "copyright": {
+    "message": "Copyright © 2023 Evolution API. All rights reserved.",
+    "description": "The footer copyright"
+  },
+  "logo.alt": {
+    "message": "Evolution API Logo",
+    "description": "The alt text of footer logo"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "position": 3,
+  "label": "Optional resources",
+  "collapsible": true,
+  "collapsed": false,
+  "className": "Resources",
+  "link": {
+    "type": "generated-index",
+    "title": "Optional resources"
+  },
+  "customProps": {
+    "description": "Resources that can be useful in your environment to extend Evolution functionalities."
+  }
+}
