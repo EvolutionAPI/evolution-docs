@@ -121,7 +121,7 @@ npm run start:prod
 
 ## Install and Configure PM2
 
-Use PM2 to manage the API process:
+Use PM2 to install PM2 and start the manager for the API process:
 
 ```bash title="CLI"
 npm install pm2 -g

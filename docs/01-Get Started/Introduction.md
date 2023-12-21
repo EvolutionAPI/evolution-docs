@@ -16,7 +16,6 @@ last_update:
   date: 12/12/2023
   author: matheus
 ---
-## Introduction
 
 This is a **COMPLETELY FREE** project, aiming to support small shopkeepers, entrepreneurs, self-employed professionals, and people with limited purchasing power. The goal is to enhance local or digital businesses with a WhatsApp™ messaging solution via API.
 
