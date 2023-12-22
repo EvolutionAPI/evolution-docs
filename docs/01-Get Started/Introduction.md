@@ -142,7 +142,7 @@ Before starting the installation, **please read all recommendation before instal
 6. While some users have successfully installed in various scenarios (other providers, local installation, Windows installation, usage and access without reverse proxy), these may require additional steps like port forwarding, additional apps, or specific settings not covered in this tutorial.
 7. Any installation method deviating from this tutorial is **AT THE USER'S OWN DISCRETION AND RESPONSIBILITY**.
 
-# License
+### License
 
 This application is protected under the **GNU V3 Use License**.
 
