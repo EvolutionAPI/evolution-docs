@@ -162,7 +162,7 @@ This is an example image with some of the environments variables set for fast co
 Assuming that you wil have an MongoDB and a RabbitMQ container running container running. Read the optional resources section for detailed information.
 :::
 
-This example should work for most of use cases, if you want more in-depth over personalized configuration and installation check the [environment variables](/docs/01-Get%20Started/Environment%20variables.md) section.
+This example should work for most of use cases, if you want more in-depth over personalized configuration and installation check the environment variables section.
 
 ```yaml title="docker-compose.yaml" showLineNumbers
 version: "3.8"
