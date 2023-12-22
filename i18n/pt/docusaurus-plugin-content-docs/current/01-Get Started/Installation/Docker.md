@@ -1,5 +1,5 @@
 ---
-id: docker-installation
+id: instalação-com-docker
 title: Docker
 hide_title: false
 hide_table_of_contents: false
@@ -7,11 +7,11 @@ sidebar_label: Docker
 sidebar_position: 1
 pagination_label: Docker
 # custom_edit_url: https://github.com/facebook/docusaurus/edit/main/docs/api-doc-markdown.md
-description: Install EvolutionAPI on Docker environment
+description: Instale a EvolutionAPI no seu ambiente Docker.
 keywords:
   - installation
   - Docker
-  - Nginx
+  - Traefik
 # image: https://i.imgur.com/mErPwqL.png
 # slug: /myDoc
 last_update:
@@ -22,32 +22,36 @@ last_update:
 # Docker
 
 :::note Note:
-These installation instructions assume that you have already installed Docker on your machine, you could find information on how to install docker in the [Official Docker Documentation](https://docs.docker.com/engine/install/).
+
+Essas instruções de instalação pressupõem que você já tenha instalado o Docker em sua máquina, você pode encontrar informações sobre como instalar o docker na [Documentação Oficial do Docker](https://docs.docker.com/engine/install/).
+
 :::
 
-EvolutionAPI is docker ready and can be easily deployed with docker in standalone and swarm mode. [The oficial EvolutionAPI repository](https://github.com/EvolutionAPI/evolution-api) has all the compose needed to install the API.
+EvolutionAPI é Docker-ready e pode ser facilmente implantada com Docker no modo Standalone e Swarm. Mais abaixo você vera alguns exemplos prontos para deploy, veja [o repositório oficial da Evolution API](https://github.com/EvolutionAPI/evolution-api) para mais exemplos de compose além dos exemplos da documentação.
 
-## Deploy using docker run
+## Deploy usando o comando docker run
 
-:::tip
-CLI installation is recommended in fast deploy mostly for tests or development, it should not be used for production, instead we recommend you to [use docker-compose](#deploy-using-docker-compose) for easy of deployment and maintainability.
+:::tip Dica
+
+A instalação via CLI é recomendada para testes ou desenvolvimento e não é recomendada para produção, por isso recomendamos o deploy via [docker compose](#deploy-using-docker-compose) para facilitar a escala, updates e sustentabilidade da aplicação.
+
 :::
 
-The fastest way to deploy EvolutionAPI with Docker is using `docker run` in the command line interface.
+A maneira mais rápida de instalar a Evolution com Docker é usando o comando `docker run` via CLI do seu sistema.
 
 ```bash title="Linux Command Line Interface" live
 docker run --name evolution-api --detach \
 -p 8080:8080 \
--e API_KEY=YOUR_SUPER_SECURE_AUTHENTICATION_KEY \
+-e API_KEY=SUA_CHAVE_SUPER_SEGURA \
 atendai/evolution-api \
 node ./dist/src/main.js
 ```
 
-This will run a docker container exposing the application on port 8080 and you could start testing and request the WhatsApp QR code using the authentication variable content with de `apikey` header set.
+Isso executará um contêiner docker expondo o aplicativo na porta 8080 e você poderá começar a testar e solicitar o código QR do WhatsApp usando a o cabeçalho de autenticação `apikey` definido.
 
-If you want to make sure that the api is running just use your browser to access http://localhost:8080. This should be your browsers response:
+Se você quiser ter certeza de que a API está rodando, basta usar seu navegador para acessar http://localhost:8080. Esta deve ser a resposta do seu navegador:
 
-```json title="http://localhost:8080/" 
+```json title="http://localhost:8080/"
 {
     "status": 200,
     "message": "Welcome to the Evolution API, it is working!",
@@ -56,47 +60,47 @@ If you want to make sure that the api is running just use your browser to access
 }
 ```
 
-EvolutionAPI has a in-built Swagger endpoint documentation, you could use to see all the possible endpoints and test the requests by accessing `http://localhost:8080/docs`.
+EvolutionAPI tem uma documentação de endpoint Swagger embutida, que você pode usar para ver todos os endpoints possíveis e testar as solicitações acessando `http://localhost:8080/docs`.
 
-## Deploy using docker run with volumes
+## Deploy usando o docker run com volumes
 
-You could also deploy using docker volumes to map EvolutionAPI data and instances to keep persist application data and all the instances of WhatsApp in yor local machine avoiding problems with container restart using `docker run` in the command line interface.
+Você também pode implantar usando volumes docker para mapear dados e instâncias do EvolutionAPI para manter os dados persistentes do aplicativo e todas as instâncias do WhatsApp em sua máquina local, evitando problemas com a reinicialização do contêiner usando `docker run` na interface de linha de comando.
 
-Run the following command to deploy the EvolutionAPI with the necessary volumes. This command maps the `evolution_store` and `evolution_instances` volumes to the respective directories within the container.
+Execute o comando a seguir para implementar o EvolutionAPI com os volumes necessários. Este comando mapeia os volumes `evolution_store` e `evolution_instances` para os respectivos diretórios dentro do contêiner.
 
 ```bash title="Linux Command Line Interface" live
 docker run --name evolution-api --detach \
 -p 8080:8080 \
--e API_KEY=YOUR_SUPER_SECURE_AUTHENTICATION_KEY \
+-e API_KEY=SUA_CHAVE_SUPER_SEGURA \
 -v evolution_store:/evolution/store \
 -v evolution_instances:/evolution/instances \
 atendai/evolution-api \
 node ./dist/src/main.js
 ```
 
-`-v evolution_store:/evolution/store`: This option mounts the evolution_store volume to the /evolution/store directory in the container. It is used for storing persistent data related to your application.
+`-v Evolution_store:/evolution/store`: Esta opção monta o volume Evolution_store no diretório /evolution/store no contêiner. É usado para armazenar dados persistentes relacionados ao seu aplicativo.
 
-`-v evolution_instances:/evolution/instances`: This mounts the evolution_instances volume to the /evolution/instances directory. This is crucial for maintaining the state of your WhatsApp instances.
+`-v evolution_instances:/evolution/instances`: Isso monta o volume evolution_instances no diretório /evolution/instances. Isso é crucial para manter o estado das suas instâncias do WhatsApp.
 
-:::tip
+:::tip Dica
 
-For production environments with high volumes of requests, see the example below with Docker Compose using MongoDB.
+Para ambientes de produção com altos volumes de requisições veja abaixo o exemplo com docker compose usando o banco de dados MongoDB.
 
 :::
 
-## Deploy using docker-compose
+## Deploy usando docker-compose
 
-Deploying the EvolutionAPI using Docker Compose simplifies the configuration and management of your Docker containers. It allows you to define your Docker environment in a `docker-compose.yaml` file, and then use a single command to start everything.
+A implantação da EvolutionAPI usando Docker Compose simplifica a configuração e o gerenciamento de seus contêineres Docker. Ele permite que você defina seu ambiente Docker em um arquivo `docker-compose.yaml` e, em seguida, use um único comando para iniciar tudo.
 
-This is an example of Docker Compose for standalone environments, that is, a single server running, for synchronization of two servers in parallel use Swarm mode, this is for more advanced docker users.
+Esse é o exemplo de docker compose para ambientes standalone, ou seja, um único servidor rodando, para sincronia de dois servidores em paralelo usando o modo Swarm para usuários mais avançados.
 
 ### Docker Standalone
 
-Docker standalone is suited when your evolution API will be executed in only one machine and you will not need soon of scalability or other Docker Swarm resources, is the most convenient way of use Docker for most people.
+O Docker autônomo é adequado quando sua API de evolução será executada em apenas uma máquina e você não precisará em breve de escalabilidade ou outros recursos do Docker Swarm, é a maneira mais conveniente de usar o Docker para a maioria das pessoas.
 
-First, create a `docker-compose.yaml` file in your project directory. This file will define the services, networks, and volumes for your Docker environment.
+Primeiro, crie um arquivo `docker-compose.yaml` no diretório do seu projeto. Este arquivo definirá os serviços, redes e volumes para o seu ambiente Docker.
 
-Here's an example `docker-compose.yaml` for **Docker Standalone** mode:
+Aqui está um exemplo `docker-compose.yaml` para o modo **Docker Standalone**:
 
 ```yaml title="docker-compose.yaml" showLineNumbers
 version: '3'
@@ -110,7 +114,7 @@ services:
     ports:
       - "8080:8080"
     environment:
-      - API_KEY=YOUR_SUPER_SECURE_AUTHENTICATION_KEY
+      - API_KEY=SUA_CHAVE_SUPER_SEGURA
     volumes:
       - evolution_store:/evolution/store
       - evolution_instances:/evolution/instances
@@ -120,13 +124,13 @@ volumes:
   evolution_instances:
 ```
 
-Navigate to the directory containing your docker-compose.yml file and run the following command to start the services defined in the file:
+Navegue até o diretório que contém seu arquivo docker-compose.yml e execute o seguinte comando para iniciar os serviços definidos no arquivo:
 
 ```bash title="Linux Command Line Interface"
 docker-compose up --detach
 ```
 
-This command will download the necessary Docker images, create the defined services, networks, and volumes, and start the EvolutionAPI service.
+Este comando fará download das imagens Docker necessárias, criará os serviços, redes e volumes definidos e iniciará o serviço EvolutionAPI.
 
 #### Check Services
 
