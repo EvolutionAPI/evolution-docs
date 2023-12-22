@@ -159,7 +159,7 @@ Make sure that your cluster is configured with a manager node and the networks p
 This is an example image with some of the environments variables set for fast configuration with Traefik proxy manager, read the [Traefik documentation](https://doc.traefik.io/traefik/providers/docker/) for more information.
 
 :::note optional resources
-Assuming that you wil have an MongoDB and a RabbitMQ container running container running. Read the [optional resources](/docs/01-Get%20Started/Optional%20resources/) section for detailed information.
+Assuming that you wil have an MongoDB and a RabbitMQ container running container running. Read the optional resources section for detailed information.
 :::
 
 This example should work for most of use cases, if you want more in-depth over personalized configuration and installation check the [environment variables](/docs/01-Get%20Started/Environment%20variables.md) section.
