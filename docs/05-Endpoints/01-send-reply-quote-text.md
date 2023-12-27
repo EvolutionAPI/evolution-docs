@@ -32,12 +32,12 @@ It works both for incoming messages and for quoting your own outgoing messages i
         "participant": ""
       },
       "message": {
-        "conversation": "Plain text message, sent with the _Evolution-API_ 🚀.\n\nHere you can send texts in _bold_, _italic_, ~strikethrough~ and `monospaced`.\n\nYou can also use any available emoticon on WhatsApp, like these examples below:\n\n😉🤣🤩🤝👏👍🙏"
+        "conversation": "Plain text message, sent with the _Evolution-API_ 🚀.\n\nHere you can send texts in *bold*, _italic_, ~strikethrough~ and `monospaced`.\n\nYou can also use any available emoticon on WhatsApp, like these examples below:\n\n😉🤣🤩🤝👏👍🙏"
       }
     }
   },
   "textMessage": {
-    "text": "Reply quote text message, sent with the _Evolution-API_ 🚀.\n\nHere you can send texts in _bold_, _italic_, ~strikethrough~ and `monospaced`.\n\nYou can also use any available emoticon on WhatsApp, like these examples below:\n\n😉🤣🤩🤝👏👍🙏"
+    "text": "Reply quote text message, sent with the _Evolution-API_ 🚀.\n\nHere you can send texts in *bold*, _italic_, ~strikethrough~ and `monospaced`.\n\nYou can also use any available emoticon on WhatsApp, like these examples below:\n\n😉🤣🤩🤝👏👍🙏"
   }
 }
 ```
@@ -53,12 +53,12 @@ It works both for incoming messages and for quoting your own outgoing messages i
   },
   "message": {
     "extendedTextMessage": {
-      "text": "Reply quote text message, sent with the _Evolution-API_ 🚀.\n\nHere you can send texts in _bold_, _italic_, ~strikethrough~ and `monospaced`.\n\nYou can also use any available emoticon on WhatsApp, like these examples below:\n\n😉🤣🤩🤝👏👍🙏",
+      "text": "Reply quote text message, sent with the _Evolution-API_ 🚀.\n\nHere you can send texts in *bold*, _italic_, ~strikethrough~ and `monospaced`.\n\nYou can also use any available emoticon on WhatsApp, like these examples below:\n\n😉🤣🤩🤝👏👍🙏",
       "contextInfo": {
         "stanzaId": "BAE5766236A2AEFF",
         "participant": "{{remoteJid}}@s.whatsapp.net",
         "quotedMessage": {
-          "conversation": "Plain text message, sent with the _Evolution-API_ 🚀.\n\nHere you can send texts in _bold_, _italic_, ~strikethrough~ and `monospaced`.\n\nYou can also use any available emoticon on WhatsApp, like these examples below:\n\n😉🤣🤩🤝👏👍🙏"
+          "conversation": "Plain text message, sent with the _Evolution-API_ 🚀.\n\nHere you can send texts in *bold*, _italic_, ~strikethrough~ and `monospaced`.\n\nYou can also use any available emoticon on WhatsApp, like these examples below:\n\n😉🤣🤩🤝👏👍🙏"
         }
       }
     }
