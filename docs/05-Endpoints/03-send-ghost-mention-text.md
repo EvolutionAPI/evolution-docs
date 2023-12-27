@@ -33,7 +33,7 @@ Excessive use in a group with many members in this condition may cause dissatisf
     }
   },
   "textMessage": {
-    "text": "Ghost mention text message, sent with the _Evolution-API_ 🚀.\n\nHere you can send texts in _bold_, _italic_, ~strikethrough~ and `monospaced`.\n\nYou can also use any available emoticon on WhatsApp, like these examples below:\n\n😉🤣🤩🤝👏👍🙏"
+    "text": "Ghost mention text message, sent with the _Evolution-API_ 🚀.\n\nHere you can send texts in *bold*, _italic_, ~strikethrough~ and `monospaced`.\n\nYou can also use any available emoticon on WhatsApp, like these examples below:\n\n😉🤣🤩🤝👏👍🙏"
   }
 }
 ```
@@ -49,7 +49,7 @@ Excessive use in a group with many members in this condition may cause dissatisf
   },
   "message": {
     "extendedTextMessage": {
-      "text": "Ghost mention text message, sent with the _Evolution-API_ 🚀.\n\nHere you can send texts in _bold_, _italic_, ~strikethrough~ and `monospaced`.\n\nYou can also use any available emoticon on WhatsApp, like these examples below:\n\n😉🤣🤩🤝👏👍🙏",
+      "text": "Ghost mention text message, sent with the _Evolution-API_ 🚀.\n\nHere you can send texts in *bold*, _italic_, ~strikethrough~ and `monospaced`.\n\nYou can also use any available emoticon on WhatsApp, like these examples below:\n\n😉🤣🤩🤝👏👍🙏",
       "contextInfo": {
         "mentionedJid": [
           "{{remoteJid}}1@s.whatsapp.net",
