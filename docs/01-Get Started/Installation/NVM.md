@@ -109,7 +109,7 @@ In the nano editor, navigate through the file and replace the default values wit
 
 :::note
 
-Access the [environment variables](/docs/01-Get%20Started/Environment%20variables.md) section for detailed instructions on configuring your `env.yml` file.
+Access the environment variables section for detailed instructions on configuring your `env.yml` file.
 
 :::
 
