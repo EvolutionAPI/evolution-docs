@@ -24,7 +24,7 @@ Send text messages using the same features as your device or web.
     "presence": "composing"
   },
   "textMessage": {
-    "text": "Plain text message, sent with the _Evolution-API_ 🚀.\n\nHere you can send texts in _bold_, _italic_, ~strikethrough~ and `monospaced`.\n\nYou can also use any available emoticon on WhatsApp, like these examples below:\n\n😉🤣🤩🤝👏👍🙏"
+    "text": "Plain text message, sent with the _Evolution-API_ 🚀.\n\nHere you can send texts in *bold*, _italic_, ~strikethrough~ and `monospaced`.\n\nYou can also use any available emoticon on WhatsApp, like these examples below:\n\n😉🤣🤩🤝👏👍🙏"
   }
 }
 ```
@@ -40,7 +40,7 @@ Send text messages using the same features as your device or web.
   },
   "message": {
     "extendedTextMessage": {
-      "text": "Plain text message, sent with the _Evolution-API_ 🚀.\n\nHere you can send texts in _bold_, _italic_, ~strikethrough~ and `monospaced`.\n\nYou can also use any available emoticon on WhatsApp, like these examples below:\n\n😉🤣🤩🤝👏👍🙏"
+      "text": "Plain text message, sent with the _Evolution-API_ 🚀.\n\nHere you can send texts in *bold*, _italic_, ~strikethrough~ and `monospaced`.\n\nYou can also use any available emoticon on WhatsApp, like these examples below:\n\n😉🤣🤩🤝👏👍🙏"
     }
   },
   "messageTimestamp": "1689604487",
