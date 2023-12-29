@@ -1,50 +1,50 @@
 {
   "version.label": {
-    "message": "Next",
-    "description": "The label for version current"
+    "message": "Próxima",
+    "description": "O rótulo para a versão atual"
   },
   "sidebar.docsSidebar.category.Get Started": {
-    "message": "Get Started",
-    "description": "The label for category Get Started in sidebar docsSidebar"
+    "message": "Inicio",
+    "description": "O rótulo para a categoria Comece na barra lateral docsSidebar"
   },
   "sidebar.docsSidebar.category.Get Started.link.generated-index.title": {
-    "message": "Get Started",
-    "description": "The generated-index page title for category Get Started in sidebar docsSidebar"
+    "message": "Comece",
+    "description": "O título da página generated-index para a categoria Comece na barra lateral docsSidebar"
   },
   "sidebar.docsSidebar.category.Installation": {
-    "message": "Installation",
-    "description": "The label for category Installation in sidebar docsSidebar"
+    "message": "Instalação",
+    "description": "O rótulo para a categoria Instalação na barra lateral docsSidebar"
   },
   "sidebar.docsSidebar.category.Installation.link.generated-index.title": {
-    "message": "Installation",
-    "description": "The generated-index page title for category Installation in sidebar docsSidebar"
+    "message": "Instalação",
+    "description": "O título da página generated-index para a categoria Instalação na barra lateral docsSidebar"
   },
   "sidebar.docsSidebar.category.Optional resources": {
-    "message": "Optional resources",
-    "description": "The label for category Optional resources in sidebar docsSidebar"
+    "message": "Recursos Opcionais",
+    "description": "O rótulo para a categoria Recursos Opcionais na barra lateral docsSidebar"
   },
   "sidebar.docsSidebar.category.Optional resources.link.generated-index.title": {
-    "message": "Optional resources",
-    "description": "The generated-index page title for category Optional resources in sidebar docsSidebar"
+    "message": "Recursos Opcionais",
+    "description": "O título da página generated-index para a categoria Recursos Opcionais na barra lateral docsSidebar"
   },
   "sidebar.docsSidebar.category.Configuration": {
-    "message": "Configuration",
-    "description": "The label for category Configuration in sidebar docsSidebar"
+    "message": "Configuração",
+    "description": "O rótulo para a categoria Configuração na barra lateral docsSidebar"
   },
   "sidebar.docsSidebar.category.Instance Controller": {
-    "message": "Instance Controller",
-    "description": "The label for category Instance Controller in sidebar docsSidebar"
+    "message": "Controle de Instância",
+    "description": "O rótulo para a categoria Controlador de Instância na barra lateral docsSidebar"
   },
   "sidebar.docsSidebar.category.Webhooks": {
     "message": "Webhooks",
-    "description": "The label for category Webhooks in sidebar docsSidebar"
+    "description": "O rótulo para a categoria Webhooks na barra lateral docsSidebar"
   },
   "sidebar.docsSidebar.category.Send Messages": {
-    "message": "Send Messages",
-    "description": "The label for category Send Messages in sidebar docsSidebar"
+    "message": "Enviar Mensagens",
+    "description": "O rótulo para a categoria Enviar Mensagens na barra lateral docsSidebar"
   },
   "sidebar.docsSidebar.category.Chatwoot": {
     "message": "Chatwoot",
-    "description": "The label for category Chatwoot in sidebar docsSidebar"
+    "description": "O rótulo para a categoria Chatwoot na barra lateral docsSidebar"
   }
 }

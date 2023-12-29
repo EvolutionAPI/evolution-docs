@@ -1,0 +1,14 @@
+{
+  "position": 3,
+  "label": "Recursos Opcionais",
+  "collapsible": true,
+  "collapsed": false,
+  "className": "Recursos",
+  "link": {
+    "type": "generated-index",
+    "title": "Recursos Opcionais"
+  },
+  "customProps": {
+    "description": "Recursos que podem ser úteis em seu ambiente para estender as funcionalidades do Evolution."
+  }
+}
