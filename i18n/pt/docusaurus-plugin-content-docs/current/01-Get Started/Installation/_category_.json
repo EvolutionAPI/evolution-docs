@@ -1,0 +1,14 @@
+{
+  "position": 2,
+  "label": "Instalação",
+  "collapsible": true,
+  "collapsed": false,
+  "className": "Installation",
+  "link": {
+    "type": "generated-index",
+    "title": "Instalação"
+  },
+  "customProps": {
+    "description": "Self-host Evolution in your own environment."
+  }
+}

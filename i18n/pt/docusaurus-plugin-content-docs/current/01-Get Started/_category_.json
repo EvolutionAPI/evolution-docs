@@ -1,0 +1,14 @@
+{
+  "position": 1,
+  "label": "Inicio",
+  "collapsible": true,
+  "collapsed": false,
+  "className": "get-started",
+  "link": {
+    "type": "generated-index",
+    "title": "Inicio"
+  },
+  "customProps": {
+    "description": "Start exploring EvolutionAPI"
+  }
+}
