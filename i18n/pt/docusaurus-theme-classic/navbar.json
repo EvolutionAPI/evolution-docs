@@ -1,26 +1,26 @@
 {
   "logo.alt": {
     "message": "Logotipo da Evolution API",
-    "description": "Texto alternativo do logotipo da barra de navegação"
+    "description": "The alt text of navbar logo"
   },
   "item.label.Documentation": {
     "message": "Documentação",
-    "description": "Item da barra de navegação com rótulo Documentação"
+    "description": "Navbar item with label Documentation"
   },
   "item.label.Blog": {
     "message": "Blog",
-    "description": "Item da barra de navegação com rótulo Blog"
+    "description": "Navbar item with label Blog"
   },
   "item.label.Community": {
     "message": "Comunidade",
-    "description": "Item da barra de navegação com rótulo Comunidade"
+    "description": "Navbar item with label Community"
   },
   "item.label.WhatsApp Group": {
     "message": "Grupo WhatsApp",
-    "description": "Item da barra de navegação com rótulo Grupo WhatsApp"
+    "description": "Navbar item with label WhatsApp Group"
   },
   "item.label.Discord Server": {
     "message": "Servidor Discord",
-    "description": "Item da barra de navegação com rótulo Servidor Discord"
+    "description": "Navbar item with label Discord Server"
   }
 }

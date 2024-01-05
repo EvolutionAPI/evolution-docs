@@ -1,10 +1,10 @@
 {
   "copyright": {
     "message": "Direitos Autorais © 2023 Evolution API. Todos os direitos reservados.",
-    "description": "Direitos autorais do rodapé"
+    "description": "The footer copyright"
   },
   "logo.alt": {
     "message": "Logotipo da Evolution API",
-    "description": "Texto alternativo do logotipo do rodapé"
+    "description": "The alt text of footer logo"
   }
 }
