@@ -5,12 +5,12 @@ sidebar_position: 1
 # Enviar uma Mensagem de Citação de Texto
 
 :::note Instruções:
-Substitua o conteúdo existente entre {{  }} pelo que corresponder ao seu cenário ou necessidade.
+Substitua o conteúdo existente entre [  ] pelo que corresponder ao seu cenário ou necessidade.
 :::
 
 | Método | Endpoint                                  |
 | ------ | ----------------------------------------- |
-| POST   | {{baseUrl}}/message/sendText/{{instance}} |
+| POST   | [baseUrl]/message/sendText/[instance] |
 
 Envie uma mensagem citando uma mensagem anterior na resposta.
 
@@ -20,13 +20,13 @@ Isso funciona tanto para mensagens recebidas quanto para citar suas próprias me
 
 ```json title=Payload
 {
-  "number": "{{remoteJid}}",
+  "number": "[remoteJid]",
   "options": {
     "delay": 1200,
     "presence": "composing",
     "quoted": {
       "key": {
-        "remoteJid": "{{remoteJid}}@s.whatsapp.net",
+        "remoteJid": "[remoteJid]@s.whatsapp.net",
         "fromMe": true,
         "id": "BAE5766236A2AEFF",
         "participant": ""
@@ -47,7 +47,7 @@ Isso funciona tanto para mensagens recebidas quanto para citar suas próprias me
 ```json title=Result
 {
   "key": {
-    "remoteJid": "{{remoteJid}}@s.whatsapp.net",
+    "remoteJid": "[remoteJid]@s.whatsapp.net",
     "fromMe": true,
     "id": "BAE5FA1CB273B533"
   },
@@ -56,7 +56,7 @@ Isso funciona tanto para mensagens recebidas quanto para citar suas próprias me
       "text": "Mensagem de texto com citação de resposta, enviada com a _Evolution-API_ 🚀.\n\nAqui você pode enviar textos em *negrito*, _itálico_, ~riscado~ e `monoespaçado`.\n\nVocê também pode usar qualquer emoticon disponível no WhatsApp, como estes exemplos abaixo:\n\n😉🤣🤩🤝👏👍🙏",
       "contextInfo": {
         "stanzaId": "BAE5766236A2AEFF",
-        "participant": "{{remoteJid}}@s.whatsapp.net",
+        "participant": "[remoteJid]@s.whatsapp.net",
         "quotedMessage": {
           "conversation": "Mensagem de texto simples, enviada com a _Evolution-API_ 🚀.\n\nAqui você pode enviar textos em *negrito*, _itálico_, ~riscado~ e `monoespaçado`.\n\nVocê também pode usar qualquer emoticon disponível no WhatsApp, como estes exemplos abaixo:\n\n😉🤣🤩🤝👏👍🙏"
         }

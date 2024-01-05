@@ -1,12 +1,12 @@
 # Set ChatWoot
 
 :::info Instructions:
-Swap the existing content between {{  }} for whatever matches your scenario or need.
+Swap the existing content between [  ] for whatever matches your scenario or need.
 :::
 
 | Method | Endpoint                              |
 | ------ | ------------------------------------- |
-| POST   | {{baseUrl}}/chatwoot/set/{{instance}} |
+| POST   | [baseUrl]/chatwoot/set/[instance] |
 
 ## Set Instance from ChatWoot™
 
@@ -33,13 +33,13 @@ It is also possible to mark as "true" the option to automatically sign messages 
 ```json title=Result
 {
   "instance": {
-    "instanceName": "{{instance}}",
+    "instanceName": "[instance]",
     "status": "created"
   },
   "hash": {
-    "apikey": "{{apikey}}"
+    "apikey": "[apikey]"
   },
-  "webhook": "{{webhook}}",
+  "webhook": "[webhook]",
   "events": [
     "QRCODE_UPDATED",
     "MESSAGES_UPSERT",
@@ -49,12 +49,12 @@ It is also possible to mark as "true" the option to automatically sign messages 
   ],
   "chatwoot": {
     "enabled": true,
-    "account_id": {{account_id}},
-    "token": "{{token}}",
-    "url": "{{url}}",
+    "account_id": [account_id],
+    "token": "[token]",
+    "url": "[url]",
     "sign_msg": false,
-    "name_inbox": "{{name_inbox}}",
-    "webhook_url": "{{webhook_url}}"
+    "name_inbox": "[name_inbox]",
+    "webhook_url": "[webhook_url]"
   }
 }
 ```

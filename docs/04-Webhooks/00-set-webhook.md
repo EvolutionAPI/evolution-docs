@@ -1,12 +1,12 @@
 # Set Webhook
 
 :::info Instructions:
-Swap the existing content between {{  }} for whatever matches your scenario or need.
+Swap the existing content between [  ] for whatever matches your scenario or need.
 :::
 
 | Method | Endpoint                             |
 | ------ | ------------------------------------ |
-| POST   | {{baseUrl}}/webhook/set/{{instance}} |
+| POST   | [baseUrl]/webhook/set/[instance] |
 
 After Instance Creation, you can still configure or change Webhook settings.
 
@@ -17,7 +17,7 @@ Just enter the new data and consume the endpoint.
 ```json title=Payload
 {
   "enabled": true,
-  "url": "{{webhookUrl}}",
+  "url": "[webhookUrl]",
   "webhookByEvents": false,
   "events": [
     // "APPLICATION_STARTUP",
@@ -48,10 +48,10 @@ Just enter the new data and consume the endpoint.
 ```json title=Result
 {
   "webhook": {
-    "instanceName": "{{instance}}",
+    "instanceName": "[instance]",
     "webhook": {
       "enabled": true,
-      "url": "{{url}}",
+      "url": "[url]",
       "webhookByEvents": false,
       "events": [
         "QRCODE_UPDATED",

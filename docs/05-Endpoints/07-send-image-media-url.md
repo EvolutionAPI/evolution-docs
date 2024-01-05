@@ -5,12 +5,12 @@ sidebar_position: 7
 # Send Image Media Url
 
 :::note Instructions:
-Swap the existing content between {{  }} for whatever matches your scenario or need.
+Swap the existing content between [  ] for whatever matches your scenario or need.
 :::
 
 | Method | Endpoint                                   |
 | ------ | ------------------------------------------ |
-| POST   | {{baseUrl}}/message/sendMedia/{{instance}} |
+| POST   | [baseUrl]/message/sendMedia/[instance] |
 
 Send images directly from the internet, in JPG and PNG formats.
 
@@ -18,7 +18,7 @@ Send images directly from the internet, in JPG and PNG formats.
 
 ```json title=Payload
 {
-  "number": "{{remoteJid}}",
+  "number": "[remoteJid]",
   "options": {
     "delay": 1200,
     "presence": "composing"
@@ -36,7 +36,7 @@ Send images directly from the internet, in JPG and PNG formats.
 ```json title=Result
 {
   "key": {
-    "remoteJid": "{{remoteJid}}",
+    "remoteJid": "[remoteJid]",
     "fromMe": true,
     "id": "BAE51614A82384B8"
   },

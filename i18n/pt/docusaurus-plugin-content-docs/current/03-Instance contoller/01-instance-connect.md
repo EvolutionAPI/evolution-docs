@@ -6,7 +6,7 @@ sidebar_position: 1
 
 | Método | Endpoint                                  |
 | ------ | ----------------------------------------- |
-| GET    | {{baseUrl}}/instance/connect/{{instance}} |
+| GET    | [baseUrl]/instance/connect/[instance] |
 
 ### Dados a serem enviados na Requisição
 
@@ -18,7 +18,7 @@ Esta solicitação não possui carga útil.
 
 ```json title=Result
 {
-  "code": "{{code}}",
-  "base64": "{{base64}}
+  "code": "[code]",
+  "base64": "[base64]
 }
 ```

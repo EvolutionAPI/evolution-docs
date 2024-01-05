@@ -5,12 +5,12 @@ sidebar_position: 0
 # Send Plain Text
 
 :::note Instructions:
-Swap the existing content between {{  }} for whatever matches your scenario or need.
+Swap the existing content between [  ] for whatever matches your scenario or need.
 :::
 
 | Method | Endpoint                                  |
 | ------ | ----------------------------------------- |
-| POST   | {{baseUrl}}/message/sendText/{{instance}} |
+| POST   | [baseUrl]/message/sendText/[instance] |
 
 Send text messages using the same features as your device or web.
 
@@ -18,7 +18,7 @@ Send text messages using the same features as your device or web.
 
 ```json title=Payload
 {
-  "number": "{{remoteJid}}",
+  "number": "[remoteJid]",
   "options": {
     "delay": 1200,
     "presence": "composing"
@@ -34,7 +34,7 @@ Send text messages using the same features as your device or web.
 ```json title=Result
 {
   "key": {
-    "remoteJid": "{{remoteJid}}",
+    "remoteJid": "[remoteJid]",
     "fromMe": true,
     "id": "BAE5B8BC84A484E3"
   },

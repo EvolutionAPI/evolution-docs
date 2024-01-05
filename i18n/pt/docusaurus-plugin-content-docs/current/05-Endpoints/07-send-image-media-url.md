@@ -6,12 +6,12 @@ sidebar_position: 7
 
 :::note Instruções:
 
-Substitua o conteúdo existente entre {{  }} pelo que corresponder ao seu cenário ou necessidade.
+Substitua o conteúdo existente entre [  ] pelo que corresponder ao seu cenário ou necessidade.
 :::
 
 | Método | Endpoint                                   |
 | ------ | ------------------------------------------ |
-| POST   | {{baseUrl}}/message/sendMedia/{{instance}} |
+| POST   | [baseUrl]/message/sendMedia/[instance] |
 
 Envie imagens diretamente da internet, nos formatos JPG e PNG.
 
@@ -19,7 +19,7 @@ Envie imagens diretamente da internet, nos formatos JPG e PNG.
 
 ```json title=Payload
 {
-  "number": "{{remoteJid}}",
+  "number": "[remoteJid]",
   "options": {
     "delay": 1200,
     "presence": "composing"
@@ -37,7 +37,7 @@ Envie imagens diretamente da internet, nos formatos JPG e PNG.
 ```json title=Result
 {
   "key": {
-    "remoteJid": "{{remoteJid}}",
+    "remoteJid": "[remoteJid]",
     "fromMe": true,
     "id": "BAE51614A82384B8"
   },

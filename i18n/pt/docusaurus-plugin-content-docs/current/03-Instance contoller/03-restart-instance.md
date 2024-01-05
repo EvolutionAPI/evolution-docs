@@ -6,7 +6,7 @@ sidebar_position: 3
 
 | Método | Endpoint                                  |
 | ------ | ----------------------------------------- |
-| PUT    | {{baseUrl}}/instance/restart/{{instance}} |
+| PUT    | [baseUrl]/instance/restart/[instance] |
 
 ### Dados a serem enviados na solicitação
 
@@ -18,7 +18,7 @@ Esta solicitação não possui carga útil.
 
 ```json title=Result
 {
-  "state": "{{state}}",
-  "statusReason": {{statusCode}}
+  "state": "[state]",
+  "statusReason": [statusCode]
 }
 ```

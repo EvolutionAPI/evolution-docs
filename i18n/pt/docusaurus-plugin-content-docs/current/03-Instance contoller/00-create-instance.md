@@ -8,13 +8,13 @@ sidebar_position: 0
 
 :::note Instruções:
 
-Substitua o conteúdo existente entre {{  }} pelo que corresponde ao seu cenário ou necessidade.
+Substitua o conteúdo existente entre [  ] pelo que corresponde ao seu cenário ou necessidade.
 
 :::
 
 | Método | Endpoint                    |
 | ------ | --------------------------- |
-| POST   | {{baseUrl}}/instance/create |
+| POST   | [baseUrl]/instance/create |
 
 ## CRIAÇÃO BÁSICA DE INSTÂNCIA
 
@@ -26,8 +26,8 @@ Esta é a opção de Criação Básica de Instância da Evolution API.
 
 ```json title=Payload
 {
-  "instanceName": "{{instance}}",
-  "token": "{{apikey}}",
+  "instanceName": "[instance]",
+  "token": "[apikey]",
   "qrcode": true
 }
 ```
@@ -37,15 +37,15 @@ Esta é a opção de Criação Básica de Instância da Evolution API.
 ```json title=Result
 {
   "instance": {
-    "instanceName": "{{instance}}",
+    "instanceName": "[instance]",
     "status": "created"
   },
   "hash": {
-    "apikey": "{{apikey}}"
+    "apikey": "[apikey]"
   },
   "qrcode": {
-    "code": "{{code}}",
-    "base64": "{{base64}}"
+    "code": "[code]",
+    "base64": "[base64]"
   }
 }
 ```
@@ -60,10 +60,10 @@ Opcionalmente, você pode escolher receber tudo em um único Webhook ou em vári
 
 ```json title=Payload
 {
-  "instanceName": "{{instance}}",
-  "token": "{{apikey}}",
+  "instanceName": "[instance]",
+  "token": "[apikey]",
   "qrcode": true,
-  "webhook": "{{webhookUrl}}",
+  "webhook": "[webhookUrl]",
   "webhookByEvents": false,
   "events": [
     // "APPLICATION_STARTUP",
@@ -95,13 +95,13 @@ Opcionalmente, você pode escolher receber tudo em um único Webhook ou em vári
 ```json title=Resultado
 {
   "instance": {
-    "instanceName": "{{instance}}",
+    "instanceName": "[instance]",
     "status": "created"
   },
   "hash": {
-    "apikey": "{{apikey}}"
+    "apikey": "[apikey]"
   },
-  "webhook": "{{webhook}}",
+  "webhook": "[webhook]",
   "events": [
     "QRCODE_UPDATED",
     "MESSAGES_UPSERT",
@@ -110,8 +110,8 @@ Opcionalmente, você pode escolher receber tudo em um único Webhook ou em vári
     "CONNECTION_UPDATE"
   ],
   "qrcode": {
-    "code": "{{code}}",
-    "base64": "{{base64}}"
+    "code": "[code]",
+    "base64": "[base64]"
   }
 }
 ```
@@ -128,8 +128,8 @@ Também é possível marcar como "true" a opção de assinar automaticamente as 
 
 ```json title=Payload
 {
-  "instanceName": "{{instance}}",
-  "token": "{{apikey}}",
+  "instanceName": "[instance]",
+  "token": "[apikey]",
   "qrcode": true,
   "chatwoot_account_id": 1,
   "chatwoot_token": "token",
@@ -143,13 +143,13 @@ Também é possível marcar como "true" a opção de assinar automaticamente as 
 ```json title=Resultado
 {
   "instance": {
-    "instanceName": "{{instance}}",
+    "instanceName": "[instance]",
     "status": "created"
   },
   "hash": {
-    "apikey": "{{apikey}}"
+    "apikey": "[apikey]"
   },
-  "webhook": "{{webhook}}",
+  "webhook": "[webhook]",
   "events": [
     "QRCODE_UPDATED",
     "MESSAGES_UPSERT",
@@ -158,17 +158,17 @@ Também é possível marcar como "true" a opção de assinar automaticamente as 
     "CONNECTION_UPDATE"
   ],
   "qrcode": {
-    "code": "{{code}}",
-    "base64": "{{base64}}"
+    "code": "[code]",
+    "base64": "[base64]"
   },
   "chatwoot": {
     "enabled": true,
-    "account_id": {{account_id}},
-    "token": "{{token}}",
-    "url": "{{url}}",
+    "account_id": [account_id],
+    "token": "[token]",
+    "url": "[url]",
     "sign_msg": false,
-    "name_inbox": "{{name_inbox}}",
-    "webhook_url": "{{webhook_url}}"
+    "name_inbox": "[name_inbox]",
+    "webhook_url": "[webhook_url]"
   }
 }
 ```

@@ -6,12 +6,12 @@ sidebar_position: 3
 
 :::note Instruções:
 
-Substitua o conteúdo existente entre {{  }} pelo que corresponder ao seu cenário ou necessidade.
+Substitua o conteúdo existente entre [  ] pelo que corresponder ao seu cenário ou necessidade.
 :::
 
 | Método | Endpoint                                  |
 | ------ | ----------------------------------------- |
-| POST   | {{baseUrl}}/message/sendText/{{instance}} |
+| POST   | [baseUrl]/message/sendText/[instance] |
 
 Envie uma mensagem em um grupo mencionando TODOS os participantes, sem a necessidade de incluir @nome no conteúdo da mensagem.
 
@@ -26,7 +26,7 @@ O uso excessivo em um grupo com muitos membros nessas condições pode causar in
 
 ```json title=Payload
 {
-  "number": "{{groupJid}}",
+  "number": "[groupJid]",
   "options": {
     "delay": 1200,
     "presence": "composing",
@@ -45,7 +45,7 @@ O uso excessivo em um grupo com muitos membros nessas condições pode causar in
 ```json title=Result
 {
   "key": {
-    "remoteJid": "{{groupJid}}",
+    "remoteJid": "[groupJid]",
     "fromMe": true,
     "id": "BAE59EF61E567741"
   },
@@ -54,18 +54,18 @@ O uso excessivo em um grupo com muitos membros nessas condições pode causar in
       "text": "Mensagem de texto de menção fantasma, enviada com a _Evolution-API_ 🚀.\n\nAqui você pode enviar textos em *negrito*, _itálico_, ~riscado~ e `monoespaçado`.\n\nVocê também pode usar qualquer emoticon disponível no WhatsApp, como estes exemplos abaixo:\n\n😉🤣🤩🤝👏👍🙏",
       "contextInfo": {
         "mentionedJid": [
-          "{{remoteJid}}1@s.whatsapp.net",
-          "{{remoteJid}}2@s.whatsapp.net",
-          "{{remoteJid}}3@s.whatsapp.net",
-          "{{remoteJid}}4@s.whatsapp.net",
-          "{{remoteJid}}5@s.whatsapp.net"
+          "[remoteJid]1@s.whatsapp.net",
+          "[remoteJid]2@s.whatsapp.net",
+          "[remoteJid]3@s.whatsapp.net",
+          "[remoteJid]4@s.whatsapp.net",
+          "[remoteJid]5@s.whatsapp.net"
         ]
       }
     }
   },
   "messageTimestamp": "1689617824",
   "status": "PENDING",
-  "participant": "{{sender}}@s.whatsapp.net"
+  "participant": "[sender]@s.whatsapp.net"
 }
 ```
 

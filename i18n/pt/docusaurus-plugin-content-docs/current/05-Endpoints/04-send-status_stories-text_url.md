@@ -6,12 +6,12 @@ sidebar_position: 4
 
 :::note Instruções:
 
-Substitua o conteúdo existente entre {{  }} pelo que corresponder ao seu cenário ou necessidade.
+Substitua o conteúdo existente entre [  ] pelo que corresponder ao seu cenário ou necessidade.
 :::
 
 | Método | Endpoint                                    |
 | ------ | ------------------------------------------- |
-| POST   | {{baseUrl}}/message/sendStatus/{{instance}} |
+| POST   | [baseUrl]/message/sendStatus/[instance] |
 
 Envie um Status/Stories de texto ou URL (clicável) para um, alguns ou todos os contatos em sua lista.
 
@@ -25,7 +25,7 @@ Envie um Status/Stories de texto ou URL (clicável) para um, alguns ou todos os 
     "backgroundColor": "#008000",
     "font": 1,
     "allContacts": false,
-    "statusJidList": ["{{remoteJid}}@s.whatsapp.net"]
+    "statusJidList": ["[remoteJid]@s.whatsapp.net"]
   }
 }
 ```
@@ -59,7 +59,7 @@ Envie um Status/Stories de texto ou URL (clicável) para um, alguns ou todos os 
   },
   "messageTimestamp": "1689621677",
   "status": "PENDING",
-  "participant": "{{sender}}@s.whatsapp.net"
+  "participant": "[sender]@s.whatsapp.net"
 }
 ```
 

@@ -1,12 +1,12 @@
 # Configurar ChatWoot
 
 :::info Instruções:
-Substitua o conteúdo existente entre {{  }} pelo que corresponder ao seu cenário ou necessidade.
+Substitua o conteúdo existente entre [  ] pelo que corresponder ao seu cenário ou necessidade.
 :::
 
 | Método | Endpoint                              |
 | ------ | ------------------------------------- |
-| POST   | {{baseUrl}}/chatwoot/set/{{instance}} |
+| POST   | [baseUrl]/chatwoot/set/[instance] |
 
 ## Configurar Instância no ChatWoot™
 
@@ -34,13 +34,13 @@ Também é possível marcar como "true" a opção de assinar automaticamente as 
 ```json title=Result
 {
   "instance": {
-    "instanceName": "{{instance}}",
+    "instanceName": "[instance]",
     "status": "created"
   },
   "hash": {
-    "apikey": "{{apikey}}"
+    "apikey": "[apikey]"
   },
-  "webhook": "{{webhook}}",
+  "webhook": "[webhook]",
   "events": [
     "QRCODE_UPDATED",
     "MESSAGES_UPSERT",
@@ -50,12 +50,12 @@ Também é possível marcar como "true" a opção de assinar automaticamente as 
   ],
   "chatwoot": {
     "enabled": true,
-    "account_id": {{account_id}},
-    "token": "{{token}}",
-    "url": "{{url}}",
+    "account_id": [account_id],
+    "token": "[token]",
+    "url": "[url]",
     "sign_msg": false,
-    "name_inbox": "{{name_inbox}}",
-    "webhook_url": "{{webhook_url}}"
+    "name_inbox": "[name_inbox]",
+    "webhook_url": "[webhook_url]"
   }
 }
 ```

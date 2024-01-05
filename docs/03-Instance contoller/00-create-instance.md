@@ -8,13 +8,13 @@ sidebar_position: 0
 
 :::note Instructions:
 
-Swap the existing content between {{  }} for whatever matches your scenario or need.
+Swap the existing content between [  ] for whatever matches your scenario or need.
 
 :::
 
 | Method | Endpoint                    |
 | ------ | --------------------------- |
-| POST   | {{baseUrl}}/instance/create |
+| POST   | [baseUrl]/instance/create |
 
 ## CREATE INSTANCE BASIC
 
@@ -26,8 +26,8 @@ It is recommended for those who just want to send messages and don't need to mon
 
 ```json title=Payload
 {
-  "instanceName": "{{instance}}",
-  "token": "{{apikey}}",
+  "instanceName": "[instance]",
+  "token": "[apikey]",
   "qrcode": true
 }
 ```
@@ -37,15 +37,15 @@ It is recommended for those who just want to send messages and don't need to mon
 ```json title=Result
 {
   "instance": {
-    "instanceName": "{{instance}}",
+    "instanceName": "[instance]",
     "status": "created"
   },
   "hash": {
-    "apikey": "{{apikey}}"
+    "apikey": "[apikey]"
   },
   "qrcode": {
-    "code": "{{code}}",
-    "base64": "{{base64}}"
+    "code": "[code]",
+    "base64": "[base64]"
   }
 }
 ```
@@ -60,10 +60,10 @@ Optionally, you can choose to receive everything in a single Webhook or in multi
 
 ```json title=Payload
 {
-  "instanceName": "{{instance}}",
-  "token": "{{apikey}}",
+  "instanceName": "[instance]",
+  "token": "[apikey]",
   "qrcode": true,
-  "webhook": "{{webhookUrl}}",
+  "webhook": "[webhookUrl]",
   "webhookByEvents": false,
   "events": [
     // "APPLICATION_STARTUP",
@@ -95,13 +95,13 @@ Optionally, you can choose to receive everything in a single Webhook or in multi
 ```json title=Result
 {
   "instance": {
-    "instanceName": "{{instance}}",
+    "instanceName": "[instance]",
     "status": "created"
   },
   "hash": {
-    "apikey": "{{apikey}}"
+    "apikey": "[apikey]"
   },
-  "webhook": "{{webhook}}",
+  "webhook": "[webhook]",
   "events": [
     "QRCODE_UPDATED",
     "MESSAGES_UPSERT",
@@ -110,8 +110,8 @@ Optionally, you can choose to receive everything in a single Webhook or in multi
     "CONNECTION_UPDATE"
   ],
   "qrcode": {
-    "code": "{{code}}",
-    "base64": "{{base64}}"
+    "code": "[code]",
+    "base64": "[base64]"
   }
 }
 ```
@@ -128,8 +128,8 @@ It is also possible to mark as "true" the option to automatically sign messages 
 
 ```json title=Payload
 {
-  "instanceName": "{{instance}}",
-  "token": "{{apikey}}",
+  "instanceName": "[instance]",
+  "token": "[apikey]",
   "qrcode": true,
   "chatwoot_account_id": 1,
   "chatwoot_token": "token",
@@ -143,13 +143,13 @@ It is also possible to mark as "true" the option to automatically sign messages 
 ```json title=Result
 {
   "instance": {
-    "instanceName": "{{instance}}",
+    "instanceName": "[instance]",
     "status": "created"
   },
   "hash": {
-    "apikey": "{{apikey}}"
+    "apikey": "[apikey]"
   },
-  "webhook": "{{webhook}}",
+  "webhook": "[webhook]",
   "events": [
     "QRCODE_UPDATED",
     "MESSAGES_UPSERT",
@@ -158,17 +158,17 @@ It is also possible to mark as "true" the option to automatically sign messages 
     "CONNECTION_UPDATE"
   ],
   "qrcode": {
-    "code": "{{code}}",
-    "base64": "{{base64}}"
+    "code": "[code]",
+    "base64": "[base64]"
   },
   "chatwoot": {
     "enabled": true,
-    "account_id": {{account_id}},
-    "token": "{{token}}",
-    "url": "{{url}}",
+    "account_id": [account_id],
+    "token": "[token]",
+    "url": "[url]",
     "sign_msg": false,
-    "name_inbox": "{{name_inbox}}",
-    "webhook_url": "{{webhook_url}}"
+    "name_inbox": "[name_inbox]",
+    "webhook_url": "[webhook_url]"
   }
 }
 ```

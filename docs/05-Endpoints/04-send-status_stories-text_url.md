@@ -5,12 +5,12 @@ sidebar_position: 4
 # Send Status/Stories Text/Url
 
 :::note Instructions:
-Swap the existing content between {{  }} for whatever matches your scenario or need.
+Swap the existing content between [  ] for whatever matches your scenario or need.
 :::
 
 | Method | Endpoint                                    |
 | ------ | ------------------------------------------- |
-| POST   | {{baseUrl}}/message/sendStatus/{{instance}} |
+| POST   | [baseUrl]/message/sendStatus/[instance] |
 
 Send a text or url (clickable) Status/Stories to one, some or all contacts in your list.
 
@@ -24,7 +24,7 @@ Send a text or url (clickable) Status/Stories to one, some or all contacts in yo
     "backgroundColor": "#008000",
     "font": 1,
     "allContacts": false,
-    "statusJidList": ["{{remoteJid}}@s.whatsapp.net"]
+    "statusJidList": ["[remoteJid]@s.whatsapp.net"]
   }
 }
 ```
@@ -58,7 +58,7 @@ Send a text or url (clickable) Status/Stories to one, some or all contacts in yo
   },
   "messageTimestamp": "1689621677",
   "status": "PENDING",
-  "participant": "{{sender}}@s.whatsapp.net"
+  "participant": "[sender]@s.whatsapp.net"
 }
 ```
 

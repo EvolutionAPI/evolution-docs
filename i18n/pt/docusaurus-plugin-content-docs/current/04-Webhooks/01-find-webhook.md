@@ -2,7 +2,7 @@
 
 | Método | Endpoint                              |
 | ------ | ------------------------------------- |
-| GET    | {{baseUrl}}/webhook/find/{{instance}} |
+| GET    | [baseUrl]/webhook/find/[instance] |
 
 ### Dados a serem enviados na solicitação:
 
@@ -15,10 +15,10 @@ Esta solicitação não possui carga útil.
 ```json title=Result
 {
   "enabled": true,
-  "url": "{{url}}",
+  "url": "[url]",
   "webhookByEvents": false,
   "events": [
-    {{events}}
+    [events]
   ]
 }
 ```

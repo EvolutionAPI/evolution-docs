@@ -2,7 +2,7 @@
 
 | Method | Endpoint                              |
 | ------ | ------------------------------------- |
-| GET    | {{baseUrl}}/chatwoot/find/{{instance}} |
+| GET    | [baseUrl]/chatwoot/find/[instance] |
 
 ### Data to be sent in the Request
 
@@ -15,10 +15,10 @@ This request has no payload.
 ```json title=Result
 {
   "enabled": true,
-  "url": "{{url}}",
+  "url": "[url]",
   "webhookByEvents": false,
   "events": [
-    {{events}}
+    [events]
   ]
 }
 ```

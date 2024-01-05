@@ -2,7 +2,7 @@
 
 | Método | Endpoint                              |
 | ------ | ------------------------------------- |
-| GET    | {{baseUrl}}/chatwoot/find/{{instance}} |
+| GET    | [baseUrl]/chatwoot/find/[instance] |
 
 ### Dados a serem enviados na Requisição
 
@@ -17,10 +17,10 @@ Esta requisição não possui payload.
 ```json title=Result
 {
   "enabled": true,
-  "url": "{{url}}",
+  "url": "[url]",
   "webhookByEvents": false,
   "events": [
-    {{events}}
+    [events]
   ]
 }
 ```

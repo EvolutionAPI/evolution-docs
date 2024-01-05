@@ -5,12 +5,12 @@ sidebar_position: 6
 # Send Status/Stories Audio
 
 :::note Instructions:
-Swap the existing content between {{  }} for whatever matches your scenario or need.
+Swap the existing content between [  ] for whatever matches your scenario or need.
 :::
 
 | Method | Endpoint                                    |
 | ------ | ------------------------------------------- |
-| POST   | {{baseUrl}}/message/sendStatus/{{instance}} |
+| POST   | [baseUrl]/message/sendStatus/[instance] |
 
 Send a audio Status/Stories to one, some or all contacts in your list.
 
@@ -23,7 +23,7 @@ Send a audio Status/Stories to one, some or all contacts in your list.
         "content": "https://evolution-api.com/files/narratedaudio.mp3",
         "allContacts": false
         "statusJidList": [
-            "{{remoteJid}}@s.whatsapp.net"
+            "[remoteJid]@s.whatsapp.net"
         ]
     }
 }
@@ -54,7 +54,7 @@ Send a audio Status/Stories to one, some or all contacts in your list.
   },
   "messageTimestamp": "1689624384",
   "status": "PENDING",
-  "participant": "{{sender}}@s.whatsapp.net"
+  "participant": "[sender]@s.whatsapp.net"
 }
 ```
 

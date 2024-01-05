@@ -5,12 +5,12 @@ sidebar_position: 3
 # Send Ghost Mention Text
 
 :::note Instructions:
-Swap the existing content between {{  }} for whatever matches your scenario or need.
+Swap the existing content between [  ] for whatever matches your scenario or need.
 :::
 
 | Method | Endpoint                                  |
 | ------ | ----------------------------------------- |
-| POST   | {{baseUrl}}/message/sendText/{{instance}} |
+| POST   | [baseUrl]/message/sendText/[instance] |
 
 Send a message in a group, mentioning ALL participants, without the need to include @name in the message content.
 
@@ -24,7 +24,7 @@ Excessive use in a group with many members in this condition may cause dissatisf
 
 ```json title=Payload
 {
-  "number": "{{groupJid}}",
+  "number": "[groupJid]",
   "options": {
     "delay": 1200,
     "presence": "composing",
@@ -43,7 +43,7 @@ Excessive use in a group with many members in this condition may cause dissatisf
 ```json title=Result
 {
   "key": {
-    "remoteJid": "{{groupJid}}",
+    "remoteJid": "[groupJid]",
     "fromMe": true,
     "id": "BAE59EF61E567741"
   },
@@ -52,18 +52,18 @@ Excessive use in a group with many members in this condition may cause dissatisf
       "text": "Ghost mention text message, sent with the _Evolution-API_ 🚀.\n\nHere you can send texts in *bold*, _italic_, ~strikethrough~ and `monospaced`.\n\nYou can also use any available emoticon on WhatsApp, like these examples below:\n\n😉🤣🤩🤝👏👍🙏",
       "contextInfo": {
         "mentionedJid": [
-          "{{remoteJid}}1@s.whatsapp.net",
-          "{{remoteJid}}2@s.whatsapp.net",
-          "{{remoteJid}}3@s.whatsapp.net",
-          "{{remoteJid}}4@s.whatsapp.net",
-          "{{remoteJid}}5@s.whatsapp.net"
+          "[remoteJid]1@s.whatsapp.net",
+          "[remoteJid]2@s.whatsapp.net",
+          "[remoteJid]3@s.whatsapp.net",
+          "[remoteJid]4@s.whatsapp.net",
+          "[remoteJid]5@s.whatsapp.net"
         ]
       }
     }
   },
   "messageTimestamp": "1689617824",
   "status": "PENDING",
-  "participant": "{{sender}}@s.whatsapp.net"
+  "participant": "[sender]@s.whatsapp.net"
 }
 ```
 

@@ -5,12 +5,12 @@ sidebar_position: 1
 # Send Reply Quote Text
 
 :::note Instructions:
-Swap the existing content between {{  }} for whatever matches your scenario or need.
+Swap the existing content between [  ] for whatever matches your scenario or need.
 :::
 
 | Method | Endpoint                                  |
 | ------ | ----------------------------------------- |
-| POST   | {{baseUrl}}/message/sendText/{{instance}} |
+| POST   | [baseUrl]/message/sendText/[instance] |
 
 Send a message quoting a previous message in the reply.
 
@@ -20,13 +20,13 @@ It works both for incoming messages and for quoting your own outgoing messages i
 
 ```json title=Payload
 {
-  "number": "{{remoteJid}}",
+  "number": "[remoteJid]",
   "options": {
     "delay": 1200,
     "presence": "composing",
     "quoted": {
       "key": {
-        "remoteJid": "{{remoteJid}}@s.whatsapp.net",
+        "remoteJid": "[remoteJid]@s.whatsapp.net",
         "fromMe": true,
         "id": "BAE5766236A2AEFF",
         "participant": ""
@@ -47,7 +47,7 @@ It works both for incoming messages and for quoting your own outgoing messages i
 ```json title=Result
 {
   "key": {
-    "remoteJid": "{{remoteJid}}@s.whatsapp.net",
+    "remoteJid": "[remoteJid]@s.whatsapp.net",
     "fromMe": true,
     "id": "BAE5FA1CB273B533"
   },
@@ -56,7 +56,7 @@ It works both for incoming messages and for quoting your own outgoing messages i
       "text": "Reply quote text message, sent with the _Evolution-API_ 🚀.\n\nHere you can send texts in *bold*, _italic_, ~strikethrough~ and `monospaced`.\n\nYou can also use any available emoticon on WhatsApp, like these examples below:\n\n😉🤣🤩🤝👏👍🙏",
       "contextInfo": {
         "stanzaId": "BAE5766236A2AEFF",
-        "participant": "{{remoteJid}}@s.whatsapp.net",
+        "participant": "[remoteJid]@s.whatsapp.net",
         "quotedMessage": {
           "conversation": "Plain text message, sent with the _Evolution-API_ 🚀.\n\nHere you can send texts in *bold*, _italic_, ~strikethrough~ and `monospaced`.\n\nYou can also use any available emoticon on WhatsApp, like these examples below:\n\n😉🤣🤩🤝👏👍🙏"
         }

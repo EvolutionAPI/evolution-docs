@@ -6,7 +6,7 @@ sidebar_position: 5
 
 | Method | Endpoint                                 |
 | ------ | ---------------------------------------- |
-| DELETE | {{baseUrl}}/instance/logout/{{instance}} |
+| DELETE | [baseUrl]/instance/logout/[instance] |
 
 ### Data to be sent in the Request
 
@@ -18,7 +18,7 @@ This request has no payload.
 
 ```json title=Result
 {
-  "error": "{{error}}",
-  "message": "{{message}}"
+  "error": "[error]",
+  "message": "[message]"
 }
 ```

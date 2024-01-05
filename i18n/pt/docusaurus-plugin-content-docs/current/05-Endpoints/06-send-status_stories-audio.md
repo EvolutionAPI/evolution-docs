@@ -6,12 +6,12 @@ sidebar_position: 6
 
 :::note Instruções:
 
-Substitua o conteúdo existente entre {{  }} pelo que corresponder ao seu cenário ou necessidade.
+Substitua o conteúdo existente entre [  ] pelo que corresponder ao seu cenário ou necessidade.
 :::
 
 | Método | Endpoint                                    |
 | ------ | ------------------------------------------- |
-| POST   | {{baseUrl}}/message/sendStatus/{{instance}} |
+| POST   | [baseUrl]/message/sendStatus/[instance] |
 
 Envie um áudio no Status/Stories para um, alguns ou todos os contatos em sua lista.
 
@@ -25,7 +25,7 @@ Envie um áudio no Status/Stories para um, alguns ou todos os contatos em sua li
         "content": "https://evolution-api.com/files/narratedaudio.mp3",
         "allContacts": false
         "statusJidList": [
-            "{{remoteJid}}@s.whatsapp.net"
+            "[remoteJid]@s.whatsapp.net"
         ]
     }
 }
@@ -56,7 +56,7 @@ Envie um áudio no Status/Stories para um, alguns ou todos os contatos em sua li
   },
   "messageTimestamp": "1689624384",
   "status": "PENDING",
-  "participant": "{{sender}}@s.whatsapp.net"
+  "participant": "[sender]@s.whatsapp.net"
 }
 ```
 

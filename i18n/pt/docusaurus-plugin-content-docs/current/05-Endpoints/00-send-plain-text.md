@@ -5,12 +5,12 @@ sidebar_position: 0
 # Enviar Texto Simples
 
 :::note Instruções:
-Substitua o conteúdo existente entre {{  }} pelo que corresponde ao seu cenário ou necessidade.
+Substitua o conteúdo existente entre [  ] pelo que corresponde ao seu cenário ou necessidade.
 :::
 
 | Método | Endpoint                                  |
 | ------ | ----------------------------------------- |
-| POST   | {{baseUrl}}/message/sendText/{{instance}} |
+| POST   | [baseUrl]/message/sendText/[instance] |
 
 Envie mensagens de texto usando as mesmas funcionalidades do seu dispositivo ou da web.
 
@@ -18,7 +18,7 @@ Envie mensagens de texto usando as mesmas funcionalidades do seu dispositivo ou 
 
 ```json title=Payload
 {
-  "number": "{{remoteJid}}",
+  "number": "[remoteJid]",
   "options": {
     "delay": 1200,
     "presence": "composing"
@@ -34,7 +34,7 @@ Envie mensagens de texto usando as mesmas funcionalidades do seu dispositivo ou 
 ```json title=Result
 {
   "key": {
-    "remoteJid": "{{remoteJid}}",
+    "remoteJid": "[remoteJid]",
     "fromMe": true,
     "id": "BAE5B8BC84A484E3"
   },

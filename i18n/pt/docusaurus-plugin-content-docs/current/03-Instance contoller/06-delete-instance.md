@@ -6,7 +6,7 @@ sidebar_position: 6
 
 | Método | Endpoint                                 |
 | ------ | ---------------------------------------- |
-| DELETE | {{baseUrl}}/instance/delete/{{instance}} |
+| DELETE | [baseUrl]/instance/delete/[instance] |
 
 ### Dados a serem enviados na solicitação
 
@@ -18,7 +18,7 @@ Esta solicitação não possui carga útil.
 
 ```json title=Result
 {
-  "error": "{{error}}",
-  "message": "{{message}}"
+  "error": "[error]",
+  "message": "[message]"
 }
 ```

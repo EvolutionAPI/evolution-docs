@@ -6,7 +6,7 @@ sidebar_position: 2
 
 | Method | Endpoint                            |
 | ------ | ----------------------------------- |
-| GET    | {{baseUrl}}/instance/fetchInstances |
+| GET    | [baseUrl]/instance/fetchInstances |
 
 ### Data to be sent in the Request
 
@@ -20,20 +20,20 @@ This request has no payload.
 [
   {
     "instance": {
-      "instanceName": "{{instance}}",
-      "owner": "{{remoteJid}}",
-      "profileName": "{{pushName}}",
-      "profilePictureUrl": "{{profilePictureUrl}}",
-      "profileStatus": "{{profileStatus}}",
+      "instanceName": "[instance]",
+      "owner": "[remoteJid]",
+      "profileName": "[pushName]",
+      "profilePictureUrl": "[profilePictureUrl]",
+      "profileStatus": "[profileStatus]",
       "status": "open",
-      "apikey": "{{apikey}}"
+      "apikey": "[apikey]"
     }
   },
   {
     "instance": {
-      "instanceName": "{{instance}}",
+      "instanceName": "[instance]",
       "status": "connecting",
-      "apikey": "{{apikey}}"
+      "apikey": "[apikey]"
     }
   }
 ]

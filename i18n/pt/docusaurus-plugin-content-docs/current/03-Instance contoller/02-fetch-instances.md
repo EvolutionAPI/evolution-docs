@@ -6,7 +6,7 @@ sidebar_position: 2
 
 | Método | Endpoint                            |
 | ------ | ----------------------------------- |
-| GET    | {{baseUrl}}/instance/fetchInstances |
+| GET    | [baseUrl]/instance/fetchInstances |
 
 ### Dados a serem enviados na solicitação
 
@@ -20,20 +20,20 @@ Esta solicitação não possui carga útil.
 [
   {
     "instance": {
-      "instanceName": "{{instance}}",
-      "owner": "{{remoteJid}}",
-      "profileName": "{{pushName}}",
-      "profilePictureUrl": "{{profilePictureUrl}}",
-      "profileStatus": "{{profileStatus}}",
+      "instanceName": "[instance]",
+      "owner": "[remoteJid]",
+      "profileName": "[pushName]",
+      "profilePictureUrl": "[profilePictureUrl]",
+      "profileStatus": "[profileStatus]",
       "status": "open",
-      "apikey": "{{apikey}}"
+      "apikey": "[apikey]"
     }
   },
   {
     "instance": {
-      "instanceName": "{{instance}}",
+      "instanceName": "[instance]",
       "status": "connecting",
-      "apikey": "{{apikey}}"
+      "apikey": "[apikey]"
     }
   }
 ]

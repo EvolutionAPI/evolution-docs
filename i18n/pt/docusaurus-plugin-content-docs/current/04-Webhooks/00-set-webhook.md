@@ -1,12 +1,12 @@
 # Configurar Webhook
 
 :::info Instruções:
-Substitua o conteúdo existente entre {{  }} por qualquer coisa que corresponda ao seu cenário ou necessidade.
+Substitua o conteúdo existente entre [  ] por qualquer coisa que corresponda ao seu cenário ou necessidade.
 :::
 
 | Método | Endpoint                             |
 | ------ | ------------------------------------ |
-| POST   | {{baseUrl}}/webhook/set/{{instance}} |
+| POST   | [baseUrl]/webhook/set/[instance] |
 
 Após a criação da instância, você ainda pode configurar ou alterar as configurações do Webhook.
 
@@ -17,7 +17,7 @@ Basta inserir os novos dados e consumir o endpoint.
 ```json title=Payload
 {
   "enabled": true,
-  "url": "{{webhookUrl}}",
+  "url": "[webhookUrl]",
   "webhookByEvents": false,
   "events": [
     // "APPLICATION_STARTUP",
@@ -47,10 +47,10 @@ Basta inserir os novos dados e consumir o endpoint.
 ```json title=Result
 {
   "webhook": {
-    "instanceName": "{{instance}}",
+    "instanceName": "[instance]",
     "webhook": {
       "enabled": true,
-      "url": "{{url}}",
+      "url": "[url]",
       "webhookByEvents": false,
       "events": [
         "QRCODE_UPDATED",

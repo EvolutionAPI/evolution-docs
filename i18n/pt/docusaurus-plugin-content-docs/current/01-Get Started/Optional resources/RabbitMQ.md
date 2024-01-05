@@ -33,7 +33,7 @@ Para configurar o RabbitMQ para instâncias individuais do WhatsApp na Evolution
 
 
 ```plaintext title="POST"
-{{baseUrl}}/rabbitmq/set/{{instance_name}}
+[baseUrl]/rabbitmq/set/[instance_name]
 ```
 
 Este endpoint permite habilitar o RabbitMQ e especificar a quais eventos cada instância do WhatsApp deve se inscrever na fila AMQP. Abaixo está um exemplo do corpo JSON para este endpoint:

@@ -6,12 +6,12 @@ sidebar_position: 5
 
 :::note Instruções:
 
-Substitua o conteúdo existente entre {{  }} pelo que corresponder ao seu cenário ou necessidade.
+Substitua o conteúdo existente entre [  ] pelo que corresponder ao seu cenário ou necessidade.
 :::
 
 | Método | Endpoint                                    |
 | ------ | ------------------------------------------- |
-| POST   | {{baseUrl}}/message/sendStatus/{{instance}} |
+| POST   | [baseUrl]/message/sendStatus/[instance] |
 
 Envie uma imagem ou vídeo no Status/Stories para um, alguns ou todos os contatos em sua lista.
 
@@ -24,7 +24,7 @@ Envie uma imagem ou vídeo no Status/Stories para um, alguns ou todos os contato
     "content": "https://evolution-api.com/files/evolution-api.jpg",
     "caption": "This is my status/storie image. 📷",
     "allContacts": false,
-    "statusJidList": ["{{remoteJid}}@s.whatsapp.net"]
+    "statusJidList": ["[remoteJid]@s.whatsapp.net"]
   }
 }
 ```
@@ -56,7 +56,7 @@ Envie uma imagem ou vídeo no Status/Stories para um, alguns ou todos os contato
   },
   "messageTimestamp": "1689623202",
   "status": "PENDING",
-  "participant": "{{sender}}@s.whatsapp.net"
+  "participant": "[sender]@s.whatsapp.net"
 }
 ```
 

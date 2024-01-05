@@ -32,7 +32,7 @@ For **developers** who wants to use in their applications AMQP messaging system,
 To configure RabbitMQ for individual WhatsApp instances in the Evolution API, you can use the following endpoint:
 
 ```plaintext title="POST"
-{{baseUrl}}/rabbitmq/set/{{instance_name}}
+[baseUrl]/rabbitmq/set/[instance_name]
 ```
 
 This endpoint allows you to enable RabbitMQ and specify which events each WhatsApp instance should subscribe to in the AMQP queue. Below is an example of the JSON body for this endpoint:

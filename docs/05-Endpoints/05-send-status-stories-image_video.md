@@ -5,12 +5,12 @@ sidebar_position: 5
 # Send Status Stories Image/Video
 
 :::note Instructions:
-Swap the existing content between {{  }} for whatever matches your scenario or need.
+Swap the existing content between [  ] for whatever matches your scenario or need.
 :::
 
 | Method | Endpoint                                    |
 | ------ | ------------------------------------------- |
-| POST   | {{baseUrl}}/message/sendStatus/{{instance}} |
+| POST   | [baseUrl]/message/sendStatus/[instance] |
 
 Send a image or video Status/Stories to one, some or all contacts in your list.
 
@@ -23,7 +23,7 @@ Send a image or video Status/Stories to one, some or all contacts in your list.
     "content": "https://evolution-api.com/files/evolution-api.jpg",
     "caption": "This is my status/storie image. 📷",
     "allContacts": false,
-    "statusJidList": ["{{remoteJid}}@s.whatsapp.net"]
+    "statusJidList": ["[remoteJid]@s.whatsapp.net"]
   }
 }
 ```
@@ -55,7 +55,7 @@ Send a image or video Status/Stories to one, some or all contacts in your list.
   },
   "messageTimestamp": "1689623202",
   "status": "PENDING",
-  "participant": "{{sender}}@s.whatsapp.net"
+  "participant": "[sender]@s.whatsapp.net"
 }
 ```
 

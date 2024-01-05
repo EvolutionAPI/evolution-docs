@@ -6,12 +6,12 @@ sidebar_position: 2
 
 :::note Instructions:
 
-Swap the existing content between {{  }} for whatever matches your scenario or need.
+Swap the existing content between [  ] for whatever matches your scenario or need.
 :::
 
 | Method | Endpoint                                  |
 | ------ | ----------------------------------------- |
-| POST   | {{baseUrl}}/message/sendText/{{instance}} |
+| POST   | [baseUrl]/message/sendText/[instance] |
 
 Send a message in a group, mentioning one or several participants, without the need to include @name in the message content.
 
@@ -25,13 +25,13 @@ Excessive use in a group with many members in this condition may cause dissatisf
 
 ```json title=Payload
 {
-  "number": "{{groupJid}}",
+  "number": "[groupJid]",
   "options": {
     "delay": 1200,
     "presence": "composing",
     "mentions": {
       "everyOne": false,
-      "mentioned": ["{{remoteJid}}"]
+      "mentioned": ["[remoteJid]"]
     }
   },
   "textMessage": {
@@ -45,7 +45,7 @@ Excessive use in a group with many members in this condition may cause dissatisf
 ```json title=Result
 {
   "key": {
-    "remoteJid": "{{groupJid}}",
+    "remoteJid": "[groupJid]",
     "fromMe": true,
     "id": "BAE500F92531D3E2"
   },
@@ -53,13 +53,13 @@ Excessive use in a group with many members in this condition may cause dissatisf
     "extendedTextMessage": {
       "text": "Mention text message, sent with the _Evolution-API_ 🚀.\n\nHere you can send texts in *bold*, _italic_, ~strikethrough~ and `monospaced`.\n\nYou can also use any available emoticon on WhatsApp, like these examples below:\n\n😉🤣🤩🤝👏👍🙏",
       "contextInfo": {
-        "mentionedJid": ["{{remoteJid}}@s.whatsapp.net"]
+        "mentionedJid": ["[remoteJid]@s.whatsapp.net"]
       }
     }
   },
   "messageTimestamp": "1689620558",
   "status": "PENDING",
-  "participant": "{{sender}}@s.whatsapp.net"
+  "participant": "[sender]@s.whatsapp.net"
 }
 ```
 

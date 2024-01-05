@@ -1,4 +1,4 @@
-FROM node:16-alpine as build-deps
+FROM node:20-alpine as build-deps
 WORKDIR /usr/src/app
 COPY package*.json ./
 RUN yarn install -f

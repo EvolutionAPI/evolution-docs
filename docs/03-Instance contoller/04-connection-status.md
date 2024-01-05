@@ -6,7 +6,7 @@ sidebar_position: 4
 
 | Method | Endpoint                                          |
 | ------ | ------------------------------------------------- |
-| GET    | {{baseUrl}}/instance/connectionState/{{instance}} |
+| GET    | [baseUrl]/instance/connectionState/[instance] |
 
 ### Data to be sent in the Request
 
@@ -18,7 +18,7 @@ This request has no payload.
 
 ```json title=Result
 {
-  "state": "{{state}}",
-  "statusReason": {{statusCode}}
+  "state": "[state]",
+  "statusReason": [statusCode]
 }
 ```
