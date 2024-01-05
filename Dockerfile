@@ -13,7 +13,6 @@ RUN apk update \
 RUN date
 
 COPY . .
-RUN yarn build
 RUN yarn build --locale pt
 
 FROM nginx:alpine
