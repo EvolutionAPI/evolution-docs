@@ -8,16 +8,16 @@ sidebar_position: 2
 pagination_label: NVM
 # custom_edit_url: https://github.com/facebook/docusaurus/edit/main/docs/api-doc-markdown.md
 description: How to install Evolution with NVM
+# image: https://i.imgur.com/mErPwqL.png
+slug: /nvm-installation
+last_update:
+  date: 12/12/2023
+  author: matheus
 keywords:
   - installation
   - NPM
   - NVM
   - Nginx
-# image: https://i.imgur.com/mErPwqL.png
-# slug: /myDoc
-last_update:
-  date: 12/12/2023
-  author: matheus
 ---
 
 Evolution API can be easily installed using the Node Version Manager (NVM). Follow these steps to set up your environment and get Evolution API up and running on your server.

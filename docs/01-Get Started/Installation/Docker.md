@@ -8,15 +8,15 @@ sidebar_position: 1
 pagination_label: Docker
 # custom_edit_url: https://github.com/facebook/docusaurus/edit/main/docs/api-doc-markdown.md
 description: Install EvolutionAPI on Docker environment
+# image: https://i.imgur.com/mErPwqL.png
+slug: /docker-installation
+last_update:
+  date: 12/12/2023
+  author: matheus
 keywords:
   - installation
   - Docker
   - Nginx
-# image: https://i.imgur.com/mErPwqL.png
-# slug: /myDoc
-last_update:
-  date: 12/12/2023
-  author: matheus
 ---
 
 # Docker
