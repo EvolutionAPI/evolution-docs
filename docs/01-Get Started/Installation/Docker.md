@@ -8,15 +8,15 @@ sidebar_position: 1
 pagination_label: Docker
 # custom_edit_url: https://github.com/facebook/docusaurus/edit/main/docs/api-doc-markdown.md
 description: Install EvolutionAPI on Docker environment
+# image: https://i.imgur.com/mErPwqL.png
+slug: /docker-installation
+last_update:
+  date: 12/12/2023
+  author: matheus
 keywords:
   - installation
   - Docker
   - Nginx
-# image: https://i.imgur.com/mErPwqL.png
-# slug: /myDoc
-last_update:
-  date: 12/12/2023
-  author: matheus
 ---
 
 # Docker
@@ -174,15 +174,21 @@ x-variables:
     SERVER_URL: https://replace_with_your_domain.com
     CONFIG_SESSION_PHONE_CLIENT: "RENAME ME WITH YOUR COMPANY NAME"
     # ApiKey Config for authentication High Encryption AES 256 from https://acte.ltd/utils/randomkeygen
-    AUTHENTICATION_TYPE: apikey
-    AUTHENTICATION_API_KEY: YOUR_SUPER_SECURE_KEY
+    AUTHENTICATION_TYPE: "apikey"
+    AUTHENTICATION_API_KEY: "YOUR_SUPER_SECURE_KEY"
     # Database 
     DATABASE_ENABLED: "true" 
-    DATABASE_CONNECTION_URI: mongodb://yourmongouser:yourmongopassword@mongodb:27017/?authSource=admin&readPreference=primary&ssl=false&directConnection=true
-    DATABASE_CONNECTION_DB_PREFIX_NAME: evdocker
+    DATABASE_CONNECTION_URI: "mongodb://root:YOUR_SUPER_SECURE_PASSWORD@mongodb:27017/?authSource=admin&readPreference=primary&ssl=false&directConnection=true"
+    DATABASE_CONNECTION_DB_PREFIX_NAME: "evdocker"
+    # Choose the data you want to save in the application's database or store
+    DATABASE_SAVE_DATA_INSTANCE: "true"
+    DATABASE_SAVE_DATA_NEW_MESSAGE: "true"
+    DATABASE_SAVE_MESSAGE_UPDATE: "true"
+    DATABASE_SAVE_DATA_CONTACTS: "true"
+    DATABASE_SAVE_DATA_CHATS: "true"
     # RabbitMQ configs
     RABBITMQ_ENABLED: "true"
-    RABBITMQ_URI: amqp://guest:guest@rabbitmq:5672
+    RABBITMQ_URI: "amqp://guest:guest@rabbitmq:5672"
     # Typebot
     TYPEBOT_API_VERSION: "latest" # old | latest
     TYPEBOT_KEEP_OPEN: "false"
@@ -210,13 +216,49 @@ services:
         traefik.http.routers.evolution.service: "evolution"
         traefik.http.services.evolution.loadbalancer.server.port: 8080
         traefik.http.routers.evolution.rule: "Host(`replace_with_your_domain.com`)"
-        traefik.http.routers.evolution.tls.certresolver: "le" # Some users uses https as a router name
-        traefik.http.routers.evolution.entrypoints: "websecure"
+        traefik.http.routers.evolution.tls.certresolver: "le" # Some users uses letsencrypt as a resolver name, check your Traefik stack
+        traefik.http.routers.evolution.entrypoints: "websecure" # Some users uses https as a router name, check your Traefik stack
         traefik.http.routers.evolution.tls: "true"
 
-volumes: 
-  evolution_instances:
-  evolution_store:
+  mongodb:
+    image: mongo:latest
+    # Is not recommended to expose ports unless necessary, use docker internal dns name of the container for connection
+    # ports:
+    #   - 27017:27017
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME: "root"
+      - MONGO_INITDB_ROOT_PASSWORD: "YOUR_SUPER_SECURE_PASSWORD"
+      - PUID: "1000"
+      - PGID: "1000"
+    volumes:
+      - mongodb_data:/data/db
+      - mongodb_configdb:/data/configdb
+    networks:
+      - internal
+  
+  # Express is used to visualize the database content, not obligatory
+  # mongo-express:
+  #   image: mongo-express
+  #   environment:
+  #     ME_CONFIG_MONGODB_SERVER: "mongodb"
+  #     ME_CONFIG_MONGODB_ADMINUSERNAME: "root"
+  #     ME_CONFIG_MONGODB_ADMINPASSWORD: "YOUR_SUPER_SECURE_PASSWORD"
+  #     ME_CONFIG_BASICAUTH_USERNAME: "admin"
+  #     ME_CONFIG_BASICAUTH_PASSWORD: "admin"
+  #   ports:
+  #     - "8089:8081"
+  #   depends_on:
+  #     - mongodb
+  #   networks:
+  #     - internal      
+
+volumes:
+  # Obligatory volumes for mongodb
+  mongodb_data:
+  mongodb_configdb:
+  # Optional volumes for EvolutionAPI
+  # evolution_instances:
+  # evolution_store:
 
 networks:
   public:

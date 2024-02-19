@@ -8,15 +8,15 @@ sidebar_position: 7
 pagination_label: Releases
 # custom_edit_url: https://github.com/facebook/docusaurus/edit/main/docs/api-doc-markdown.md
 description: Latest releases of Evolution API
+# image: https://i.imgur.com/mErPwqL.png
+slug: /release-notes
+last_update:
+  date: 12/12/2023
+  author: matheus
 keywords:
   - Updates
   - Releases
   - Versions
-# image: https://i.imgur.com/mErPwqL.png
-# slug: /myDoc
-last_update:
-  date: 12/12/2023
-  author: matheus
 ---
 
 New features and bug fixes for Evolution API.

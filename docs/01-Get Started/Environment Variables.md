@@ -1,8 +1,23 @@
 ---
+id: variables
+title: Environment variables
+hide_title: false
+hide_table_of_contents: false
+sidebar_label: Environment variables
 sidebar_position: 6
+pagination_label: Variables
+# custom_edit_url: https://github.com/facebook/docusaurus/edit/main/docs/api-doc-markdown.md
 description: Variables configuration
+# image: https://i.imgur.com/mErPwqL.png
+slug: /variables
+last_update:
+  date: 12/12/2023
+  author: matheus
+keywords:
+  - Environment
+  - Variables
+  - Configuration
 ---
-# Environment Variables
 
 ```bash
 # Server URL - Set your application url

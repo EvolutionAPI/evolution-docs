@@ -13,7 +13,7 @@ keywords:
   - MongoDB
   - Database
 # image: https://i.imgur.com/mErPwqL.png
-# slug: /myDoc
+slug: /mongodb
 last_update:
   date: 12/19/2023
   author: matheus

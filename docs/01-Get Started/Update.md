@@ -8,13 +8,13 @@ sidebar_position: 8
 pagination_label: Updates
 # custom_edit_url: https://github.com/facebook/docusaurus/edit/main/docs/api-doc-markdown.md
 description: Update your Evolution API instances
-keywords:
-  - Updates
 # image: https://i.imgur.com/mErPwqL.png
-# slug: /myDoc
+slug: /update
 last_update:
   date: 12/12/2023
   author: matheus
+keywords:
+  - Updates
 ---
 
 Keeping your Evolution API instance up-to-date is crucial for security, performance, and accessing new features. The update method depends on how you initially installed the API. This guide covers the steps for updating your Evolution API using Docker Compose and NPM.

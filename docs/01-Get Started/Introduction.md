@@ -8,13 +8,13 @@ sidebar_position: 1
 pagination_label: Introduction
 # custom_edit_url: https://github.com/facebook/docusaurus/edit/main/docs/api-doc-markdown.md
 description: Start exploring Evolution API
-keywords:
-  - Introduction
 # image: https://i.imgur.com/mErPwqL.png
-# slug: /myDoc
+slug: /introduction
 last_update:
   date: 12/12/2023
   author: matheus
+keywords:
+  - Introduction
 ---
 
 This is a **COMPLETELY FREE** project, aiming to support small shopkeepers, entrepreneurs, self-employed professionals, and people with limited purchasing power. The goal is to enhance local or digital businesses with a WhatsApp™ messaging solution via API.
