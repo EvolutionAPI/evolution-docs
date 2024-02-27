@@ -153,6 +153,8 @@ AUTHENTICATION_TYPE=apikey
 ### OBS: This key must be inserted in the request header to create an instance.
 
 AUTHENTICATION_API_KEY=GLOBAL-API-KEY
+
+# Refers to API endpoint fetchInstances requests. true return from an instance the apikey and serverUrl in json response, false do not return.
 AUTHENTICATION_EXPOSE_IN_FETCH_INSTANCES=true
 
 ## Set the secret key to encrypt and decrypt your token and its expiration time
