@@ -223,29 +223,28 @@ In this example, replace event_name with the specific event you want to listen t
 
 Once connected, you can listen for various events emitted by the server. Each event may carry data relevant to the event's context. For instance, if you're listening for message updates, you might receive data containing the updated message content and metadata.
 
-
 <!-- prettier-ignore -->
-**Event** | **Description**
---- | ---
- application.startup | Notifies you when an application startup.
- qrcode.updated| Sends the base64 of the qrcode for reading
- connection.update | Informs the status of the connection with WhatsApp
- message.set | Sends a list of all your messages uploaded on WhatsApp. This event occurs only once
- message.upsert | Notifies you when a message is received
- message.update | Tells you when a message is updated
- message.delete | Tells you when a message is deleted
- send.message | Notifies when a message is sent
- contacts.set | Performs initial loading of all contacts.This event occurs only once
- contacts.upsert | Reloads all contacts with additional information.This event occurs only once
- contacts.update | Informs you when the chat is updated
- presence.update | Informs if the user is online, if he is performing some action like writing or recording and his last seen: 'unavailable', 'available', 'composing', 'recording', 'paused'
- chats.set | Send a list of all loaded chats
- chats.update | Informs you when the chat is updated
- chats.upsert | Sends any new chat information
- groups.upsert | Notifies when a group is created
- groups.update | Notifies when a group has its information updated
- group-participants.update | Notifies when an action occurs involving a participant: 'add', 'remove', 'promote', 'demote'
- new.jwt | Notifies when the token (jwt) is updated
+**Event**                   | **Description**
+---                         | ---
+ application.startup        | Notifies you when an application startup.
+ qrcode.updated             | Sends the base64 of the qrcode for reading
+ connection.update          | Informs the status of the connection with WhatsApp
+ messages.set               | Sends a list of all your messages uploaded on WhatsApp. This event occurs only once
+ messages.upsert            | Notifies you when a message is received
+ messages.update            | Tells you when a message is updated
+ messages.delete            | Tells you when a message is deleted
+ send.message               | Notifies when a message is sent
+ contacts.set               | Performs initial loading of all contacts.This event occurs only once
+ contacts.upsert            | Reloads all contacts with additional information.This event occurs only once
+ contacts.update            | Informs you when the chat is updated
+ presence.update            | Informs if the user is online, if he is performing some action like writing or recording and his last seen: 'unavailable', 'available', 'composing', 'recording', 'paused'
+ chats.set                  | Send a list of all loaded chats
+ chats.update               | Informs you when the chat is updated
+ chats.upsert               | Sends any new chat information
+ groups.upsert              | Notifies when a group is created
+ groups.update              | Notifies when a group has its information updated
+ group-participants.update  | Notifies when an action occurs involving a participant: 'add', 'remove', 'promote', 'demote'
+ new.jwt                    | Notifies when the token (jwt) is updated
 
 ### Sending Messages
 

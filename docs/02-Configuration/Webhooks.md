@@ -82,10 +82,10 @@ These are the available and supported webhook events:
  APPLICATION_STARTUP        | /application-startup       | Notifies you when an application startup
  QRCODE_UPDATED             | /qrcode-updated            | Sends the base64 of the qrcode for reading
  CONNECTION_UPDATE          | /connection-update         | Informs the status of the connection with WhatsApp
- MESSAGES_SET               | /message-set               | Sends a list of all your messages uploaded on WhatsApp. This event occurs only once
- MESSAGES_UPSERT            | /message-upsert            | Notifies you when a message is received
- MESSAGES_UPDATE            | /message-update            | Tells you when a message is updated
- MESSAGES_DELETE            | /message-delete            | Tells you when a message is deleted
+ MESSAGES_SET               | /messages-set              | Sends a list of all your messages uploaded on WhatsApp. This event occurs only once
+ MESSAGES_UPSERT            | /messages-upsert           | Notifies you when a message is received
+ MESSAGES_UPDATE            | /messages-update           | Tells you when a message is updated
+ MESSAGES_DELETE            | /messages-delete           | Tells you when a message is deleted
  SEND_MESSAGE               | /send-message              | Notifies when a message is sent
  CONTACTS_SET               | /contacts-set              | Performs initial loading of all contacts.This event occurs only once
  CONTACTS_UPSERT            | /contacts-upsert           | Reloads all contacts with additional information.This event occurs only once
