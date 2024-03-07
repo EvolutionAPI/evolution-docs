@@ -38,7 +38,7 @@ The fastest way to deploy EvolutionAPI with Docker is using `docker run` in the 
 ```bash title="Linux Command Line Interface" live
 docker run --name evolution-api --detach \
 -p 8080:8080 \
--e API_KEY=YOUR_SUPER_SECURE_AUTHENTICATION_KEY \
+-e AUTHENTICATION_API_KEY=YOUR_SUPER_SECURE_AUTHENTICATION_KEY \
 atendai/evolution-api \
 node ./dist/src/main.js
 ```
@@ -67,7 +67,7 @@ Run the following command to deploy the EvolutionAPI with the necessary volumes.
 ```bash title="Linux Command Line Interface" live
 docker run --name evolution-api --detach \
 -p 8080:8080 \
--e API_KEY=YOUR_SUPER_SECURE_AUTHENTICATION_KEY \
+-e AUTHENTICATION_API_KEY=YOUR_SUPER_SECURE_AUTHENTICATION_KEY \
 -v evolution_store:/evolution/store \
 -v evolution_instances:/evolution/instances \
 atendai/evolution-api \
@@ -110,7 +110,7 @@ services:
     ports:
       - "8080:8080"
     environment:
-      - API_KEY=YOUR_SUPER_SECURE_AUTHENTICATION_KEY
+      - AUTHENTICATION_API_KEY=YOUR_SUPER_SECURE_AUTHENTICATION_KEY
     volumes:
       - evolution_store:/evolution/store
       - evolution_instances:/evolution/instances
@@ -162,7 +162,7 @@ This is an example image with some of the environments variables set for fast co
 Assuming that you wil have an MongoDB and a RabbitMQ container running container running. Read the optional resources section for detailed information.
 :::
 
-This example should work for most of use cases, if you want more in-depth over personalized configuration and installation check the environment variables section.
+This example should work for most of use cases, if you want more in-depth over personalized configuration and installation check the [environment variables](https://doc.evolution-api.com/docs/variables) section.
 
 ```yaml title="docker-compose.yaml" showLineNumbers
 version: "3.8"
@@ -175,7 +175,7 @@ x-variables:
     CONFIG_SESSION_PHONE_CLIENT: "RENAME ME WITH YOUR COMPANY NAME"
     # ApiKey Config for authentication High Encryption AES 256 from https://acte.ltd/utils/randomkeygen
     AUTHENTICATION_TYPE: "apikey"
-    AUTHENTICATION_API_KEY: "YOUR_SUPER_SECURE_KEY"
+    AUTHENTICATION_AUTHENTICATION_API_KEY: "YOUR_SUPER_SECURE_KEY"
     # Database 
     DATABASE_ENABLED: "true" 
     DATABASE_CONNECTION_URI: "mongodb://root:YOUR_SUPER_SECURE_PASSWORD@mongodb:27017/?authSource=admin&readPreference=primary&ssl=false&directConnection=true"

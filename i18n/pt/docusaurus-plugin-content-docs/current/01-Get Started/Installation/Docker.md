@@ -30,7 +30,7 @@ O EvolutionAPI está pronto para o Docker e pode ser facilmente implantado com o
 ## Implante usando docker run
 
 :::tip observação
-A instalação por CLI é recomendada para implantação rápida, principalmente para testes ou desenvolvimento, não deve ser usada em produção. Em vez disso, recomendamos que você [use o docker-compose](#deploy-using-docker-compose) para facilitar a implantação e manutenção.
+A instalação por CLI é recomendada para implantação rápida, principalmente para testes ou desenvolvimento, não deve ser usada em produção. Em vez disso, recomendamos que você use o docker-compose para facilitar a implantação e manutenção.
 :::
 
 A maneira mais rápida de implantar o EvolutionAPI com o Docker é usar `docker run` na interface de linha de comando.

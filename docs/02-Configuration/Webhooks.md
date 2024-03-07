@@ -51,6 +51,22 @@ Here is an example with some commonly listened events:
     ]    
 }
 ```
+### Parameters
+
+Parameter         | Type      | Required  | Description
+---               | ---       | ---       | ---
+enabled           | boolean   | Required  | Enter "true" to create or change Webhook data, or "false" if you want to stop using it.
+url               | string    | Required  | Webhook URL to receive event data.
+webhook_by_events | boolean   | Optional  | Want to generate a specific Webhook URL for each of your events.
+events            | array     | Optional  | List of events to be processed. If you don't want to use some of these events, just remove them from the list.
+
+:::danger Warning:
+
+It is extremely necessary that the payload obey the rules for creating a JSON file, considering the correct arrangement of items, formatting, square brackets, braces and commas, etc.
+
+Before consuming the endpoint, if you have questions about the JSON formatting, go to https://jsonlint.com/ and validate.
+
+:::
 
 ### Global Webhook events 
 
@@ -82,10 +98,10 @@ These are the available and supported webhook events:
  APPLICATION_STARTUP        | /application-startup       | Notifies you when an application startup
  QRCODE_UPDATED             | /qrcode-updated            | Sends the base64 of the qrcode for reading
  CONNECTION_UPDATE          | /connection-update         | Informs the status of the connection with WhatsApp
- MESSAGES_SET               | /message-set               | Sends a list of all your messages uploaded on WhatsApp. This event occurs only once
- MESSAGES_UPSERT            | /message-upsert            | Notifies you when a message is received
- MESSAGES_UPDATE            | /message-update            | Tells you when a message is updated
- MESSAGES_DELETE            | /message-delete            | Tells you when a message is deleted
+ MESSAGES_SET               | /messages-set              | Sends a list of all your messages uploaded on WhatsApp. This event occurs only once
+ MESSAGES_UPSERT            | /messages-upsert           | Notifies you when a message is received
+ MESSAGES_UPDATE            | /messages-update           | Tells you when a message is updated
+ MESSAGES_DELETE            | /messages-delete           | Tells you when a message is deleted
  SEND_MESSAGE               | /send-message              | Notifies when a message is sent
  CONTACTS_SET               | /contacts-set              | Performs initial loading of all contacts.This event occurs only once
  CONTACTS_UPSERT            | /contacts-upsert           | Reloads all contacts with additional information.This event occurs only once
@@ -100,14 +116,63 @@ These are the available and supported webhook events:
  GROUP_PARTICIPANTS_UPDATE  | /group-participants-update | Notifies when an action occurs involving a participant: 'add', 'remove', 'promote', 'demote'
  NEW_TOKEN                  | /new-jwt                   | Notifies when the token (jwt) is updated
 
-## WEBHOOK ROUTES
+## Webhook by events
 
 When enabling the WEBHOOK_BY_EVENTS options in the global and local webhooks, the following paths will be added at the end of the webhook.
 
 :::note Example:
-Assuming your webhook url was `https://sub.domain.com/webhook-test/exclusive-webhook-code`, for the `QRCODE_UPDATED` event the complete url would look like this:
 
-`https://sub.domain.com/webhook-test/exclusive-webhook-code/qrcode-updated`
+Add on the end of the url the event name with a dash (-) between the words that compose the event for the event.
+
 :::
+ 
+ ### Example
+
+ Assuming your webhook url was `https://sub.domain.com/webhook/`. Evolution will add automatically in the end of the url the name of the event when `webhook_by_events` is set to true.
+
+  **Event**                 | **New webhook by Events URL**
+---                         | ---
+ APPLICATION_STARTUP        | https://sub.domain.com/webhook/application-startup       
+ QRCODE_UPDATED             | https://sub.domain.com/webhook/qrcode-updated            
+ CONNECTION_UPDATE          | https://sub.domain.com/webhook/connection-update         
+ MESSAGES_SET               | https://sub.domain.com/webhook/messages-set              
+ MESSAGES_UPSERT            | https://sub.domain.com/webhook/messages-upsert           
+ MESSAGES_UPDATE            | https://sub.domain.com/webhook/messages-update           
+ MESSAGES_DELETE            | https://sub.domain.com/webhook/messages-delete           
+ SEND_MESSAGE               | https://sub.domain.com/webhook/send-message              
+ CONTACTS_SET               | https://sub.domain.com/webhook/contacts-set              
+ CONTACTS_UPSERT            | https://sub.domain.com/webhook/contacts-upsert           
+ CONTACTS_UPDATE            | https://sub.domain.com/webhook/contacts-update           
+ PRESENCE_UPDATE            | https://sub.domain.com/webhook/presence-update      
+ CHATS_SET                  | https://sub.domain.com/webhook/chats-set                 
+ CHATS_UPDATE               | https://sub.domain.com/webhook/chats-update              
+ CHATS_UPSERT               | https://sub.domain.com/webhook/chats-upsert          
+ CHATS_DELETE               | https://sub.domain.com/webhook/chats-delete           
+ GROUPS_UPSERT              | https://sub.domain.com/webhook/groups-upsert
+ GROUPS_UPDATE              | https://sub.domain.com/webhook/groups-update
+ GROUP_PARTICIPANTS_UPDATE  | https://sub.domain.com/webhook/group-participants-update 
+ NEW_TOKEN                  | https://sub.domain.com/webhook/new-jwt
+
+ ## Find Webhook
+
+If necessary, there is an option to find any active webhook on the specific instance.
+
+| Method | Endpoint                              |
+| ------ | ------------------------------------- |
+| GET    | [baseUrl]/webhook/find/[instance]     |
 
 
+### Data returned from the Request:
+
+Calling the endpoint will return all the information about the webhook that is being used by the instance.
+
+```json title=Result
+{
+  "enabled": true,
+  "url": "[url]",
+  "webhookByEvents": false,
+  "events": [
+    [events]
+  ]
+}
+```
