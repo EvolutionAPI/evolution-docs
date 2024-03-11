@@ -1,0 +1,25 @@
+.versions {
+  margin-top: 20px;
+}
+
+.details {
+  border: 1px solid #aaa;
+  border-radius: 4px;
+  padding: 0.8em;
+}
+
+.summary {
+  font-weight: bold;
+  padding: 0.5em;
+}
+
+.detailsOpen {
+  padding: 1em;
+}
+
+.detailsOpenSummary {
+  border: 1px solid #aaa;
+  margin-bottom: 0.5em;
+  border-radius: 4px;
+  padding: 0.8em;
+}
