@@ -175,7 +175,7 @@ x-variables:
     CONFIG_SESSION_PHONE_CLIENT: "RENAME ME WITH YOUR COMPANY NAME"
     # ApiKey Config for authentication High Encryption AES 256 from https://acte.ltd/utils/randomkeygen
     AUTHENTICATION_TYPE: "apikey"
-    AUTHENTICATION_AUTHENTICATION_API_KEY: "YOUR_SUPER_SECURE_KEY"
+    AUTHENTICATION_API_KEY: "YOUR_SUPER_SECURE_KEY"
     # Database 
     DATABASE_ENABLED: "true" 
     DATABASE_CONNECTION_URI: "mongodb://root:YOUR_SUPER_SECURE_PASSWORD@mongodb:27017/?authSource=admin&readPreference=primary&ssl=false&directConnection=true"
