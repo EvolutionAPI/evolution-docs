@@ -1,7 +1,6 @@
-// src/components/UpdatesComponent.js
 import React from 'react';
 import { updates } from '../../docs/01-Get Started/_updates';
-import styles from './UpdatesComponent.module.css'; // Importando o CSS Module
+import styles from './UpdatesComponent.module.css';
 
 export default function UpdatesComponent() {
   return (
