@@ -43,8 +43,8 @@ export const updates = [
       "Composing over 20s now loops until finished"
     ],
     integrations: [
-      "Chatwoot: v3.3.1",
-      "Typebot: v2.20.0"
+      "Chatwoot: v3.5.2",
+      "Typebot: v2.23.0"
     ],
     commits: "",
   },
