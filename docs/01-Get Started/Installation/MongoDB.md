@@ -4,7 +4,7 @@ title: MongoDB
 hide_title: true
 hide_table_of_contents: false
 sidebar_label: MongoDB
-sidebar_position: 1
+sidebar_position: 3
 pagination_label: MongoDB
 # custom_edit_url: https://github.com/facebook/docusaurus/edit/main/docs/api-doc-markdown.md
 description: Setup an MongoBD database in your environment with Evolution API.
@@ -25,7 +25,7 @@ MongoDB, a NoSQL database, is known for high performance and scalability. It's i
 
 Set the MongoDB environment variables in the `.env` for Docker or the `dev-env.yml` for NPM file as follows:
 
-```yaml title=".env or dev-env.yml" showLineNumbers
+```yaml title=".env" showLineNumbers
 # Set to true to enable MongoDB.
 DATABASE_ENABLED=true
 # Your MongoDB connection string.
@@ -34,17 +34,17 @@ DATABASE_CONNECTION_URI=mongodb://user:password@database_URL/?authSource=admin&r
 DATABASE_CONNECTION_DB_PREFIX_NAME=evo
 ```
 
-## Data migration
+## Data migration (Beta)
 
 Switching from local storage to MongoDB will not automatically transfer your WhatsApp instances that are currently synchronized with the original local storage.
 
 :::tip Beta: Data Migration
 
-Make sure that you already have an MongoDB instance running with a database created.
+Make sure that you already have an MongoDB instance running.
 
 :::
 
-## Migrate your data in NPM or NVM
+### Migrate your data in NPM or NVM from deprecated local storage
 
 Stop the PM2 execution:
 

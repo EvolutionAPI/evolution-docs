@@ -35,7 +35,7 @@ CLI installation is recommended in fast deploy mostly for tests or development, 
 
 The fastest way to deploy EvolutionAPI with Docker is using `docker run` in the command line interface.
 
-```bash title="Linux Command Line Interface" live
+```bash title="Linux CLI (without MongoDB: recommended for testing)" live
 docker run --name evolution-api --detach \
 -p 8080:8080 \
 -e AUTHENTICATION_API_KEY=YOUR_SUPER_SECURE_AUTHENTICATION_KEY \
@@ -60,11 +60,17 @@ EvolutionAPI has a in-built Swagger endpoint documentation, you could use to see
 
 ## Deploy using docker run with volumes
 
+:::warning MongoDB Requirement
+
+To ensure optimal performance and scalability, MongoDB is now a required component for deploying the Evolution API. Traditional storage solutions (HDD/SDD-based VPS) may result in `no-sessions` errors under high request volumes due to their limited speed. Transitioning to MongoDB effectively addresses these issues, providing a robust and efficient database solution for handling extensive data loads.
+
+:::
+
 You could also deploy using docker volumes to map EvolutionAPI data and instances to keep persist application data and all the instances of WhatsApp in yor local machine avoiding problems with container restart using `docker run` in the command line interface.
 
 Run the following command to deploy the EvolutionAPI with the necessary volumes. This command maps the `evolution_store` and `evolution_instances` volumes to the respective directories within the container.
 
-```bash title="Linux Command Line Interface" live
+```bash title="Linux CLI (without MongoDB: recommended for testing)" live
 docker run --name evolution-api --detach \
 -p 8080:8080 \
 -e AUTHENTICATION_API_KEY=YOUR_SUPER_SECURE_AUTHENTICATION_KEY \
@@ -114,7 +120,19 @@ services:
     volumes:
       - evolution_store:/evolution/store
       - evolution_instances:/evolution/instances
-
+  mongodb:
+    image: mongo:latest
+    # Is not recommended to expose ports unless necessary, use docker internal dns name of the container for connection
+    # ports:
+    #   - 27017:27017
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME: "root"
+      - MONGO_INITDB_ROOT_PASSWORD: "YOUR_SUPER_SECURE_PASSWORD"
+      - PUID: "1000"
+      - PGID: "1000"
+    volumes:
+      - mongodb_data:/data/db
+      - mongodb_configdb:/data/configdb
 volumes:
   evolution_store:
   evolution_instances:
@@ -256,7 +274,7 @@ volumes:
   # Obligatory volumes for mongodb
   mongodb_data:
   mongodb_configdb:
-  # Optional volumes for EvolutionAPI
+  # Optional volumes for EvolutionAPI for local storage (deprecated)
   # evolution_instances:
   # evolution_store:
 

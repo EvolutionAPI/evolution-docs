@@ -21,21 +21,55 @@ last_update:
 
 ## Setup Redis Cache
 
-:::warning Deprecation of Redis
+Redis is an in-memory data structure store, used as a database, cache, and message broker. It supports data structures such as strings, hashes, lists, sets, and more. Incorporating Redis can significantly improve the performance of Evolution API by enabling faster data access and efficient caching. Its integration with the Evolution API enhances system responsiveness through:
 
-Redis will be deprecated in future versions of Evolution API, we do not recommend Redis installation anymore.
+1. **Caching Chatwoot Messages**: Significantly improves message retrieval and response times.
+2. **Instance Storage**: _(Deprecated)_ Previously used for managing API instances efficiently.
+
+### Configuring Redis for Evolution API
+
+#### Docker Setup (Recommended)
+
+For environments utilizing Docker, configure your Redis settings in the `.env` file:
+
+```javascript title=".env" showLineNumbers
+CACHE_REDIS_ENABLED=true
+CACHE_REDIS_URI=redis://localhost:6379
+CACHE_REDIS_PREFIX_KEY=chatwoot-cache
+CACHE_REDIS_TTL=604800
+CACHE_LOCAL_ENABLED=true
+CACHE_LOCAL_TTL=86400
+```
+#### PM2 Setup (test and development)
+
+If you use PM2 installation method, the variables has to be set on `env.yml`:
+
+```yaml title="src/env.yml" showLineNumbers
+CACHE:
+  REDIS:
+    ENABLED: true
+    URI: "redis://localhost:6379"
+    PREFIX_KEY: "evolution-cache"
+    TTL: 604800
+  LOCAL:
+    ENABLED: true
+    TTL: 86400
+```
+
+## Deprecation Notice: Redis Instance Storage
+
+:::info Deprecation of Redis for instances
+
+Redis for saving instances will be deprecated in future versions of Evolution API, we do not recommend Redis installation anymore for instance management, there is some problems when using more than one instance.
 
 :::
 
-Redis is an in-memory data structure store, used as a database, cache, and message broker. It supports data structures such as strings, hashes, lists, sets, and more. Incorporating Redis can significantly improve the performance of Evolution API by enabling faster data access and efficient caching.
-
 Set the Redis environment variables in the `.env` for Docker or the `dev-env.yml` for NPM file as follows:
 
-```yaml title=".env or dev-env.yml" showLineNumbers
-# Set to true to enable Redis.
+**Bug:** with multiple instances Redis ends up mixing information of messages sometimes, this is why deprecation is planned in future versions.
+
+```javascript title=".env" showLineNumbers
 REDIS_ENABLED=false
-# Your Redis server URI.
 REDIS_URI=redis://redis:6379
-# Prefix key for Redis data.
 REDIS_PREFIX_KEY=evo
 ```
